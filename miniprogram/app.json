@@ -1,8 +1,39 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/home/home",
+    "pages/info/info",
+    "pages/my/my",
+    "pages/coupons/coupons"
   ],
+  "tabBar": {
+    "selectedColor": "#4c168e",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "static/tab_icons/home.png",
+        "selectedIconPath": "static/tab_icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/coupons/coupons",
+        "text": "优惠卷",
+        "iconPath": "static/tab_icons/coupons.png",
+        "selectedIconPath": "static/tab_icons/coupons-active.png"
+      },
+      {
+        "pagePath": "pages/info/info",
+        "text": "订单信息",
+        "iconPath": "static/tab_icons/info.png",
+        "selectedIconPath": "static/tab_icons/info-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/tab_icons/my.png",
+        "selectedIconPath": "static/tab_icons/my-active.png"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
