@@ -1,2 +1,16 @@
-<!--pages/coupons/coupons.wxml-->
-<text>pages/coupons/coupons.wxml</text>
+<view id="coupons">
+  <view class="nav-header"></view>
+  <view class="nav-main-image">
+    <navigator url="../../package/pages/coupdetails/coupdetails">
+      <image src="../../static/coupons/coupons_image1.png" mode="widthFix"></image>
+    </navigator>
+    <navigator url="../../package/pages/coupdetails/coupdetails">
+      <image src="../../static/coupons/coupons_image2.png " mode="widthFix"></image>
+    </navigator>
+    <navigator url="../../package/pages/coupdetails/coupdetails">
+      <image src=" ../../static/coupons/coupons_image3.png" mode="widthFix"></image>
+    </navigator>
+  </view>
+
+
+</view>

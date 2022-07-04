@@ -1,6 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index"
+  },
   "navigationBarBackgroundColor": "#e7691d",
-  "navigationBarTitleText": "优惠卷",
   "navigationBarTextStyle": "black"
 }

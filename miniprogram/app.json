@@ -10,7 +10,9 @@
       "root": "package",
       "name": "p1",
       "pages": [
-        "pages/respository/respository"
+        "pages/respository/respository",
+        "pages/coupdetails/coupdetails",
+        "pages/orderInfo/orderInfo"
       ]
     }
   ],
@@ -49,6 +51,8 @@
     "navigationBarTitleText": "虎鲸转运",
     "navigationBarTextStyle": "white"
   },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index"
+  }
 }

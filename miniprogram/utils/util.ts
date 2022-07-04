@@ -1,3 +1,6 @@
+import { nanoid } from 'nanoid'
+import dayjs from "dayjs";
+
 export const formatTime = (date: Date) => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -16,4 +19,14 @@ export const formatTime = (date: Date) => {
 const formatNumber = (n: number) => {
   const s = n.toString()
   return s[1] ? s : '0' + s
+}
+
+
+//生成唯一单号
+export function getOrderId() {
+  // let a = nanoid()
+  // console.log(a);
+
+  let date = dayjs().format('YYYYMMDDHH')
+  return date;
 }

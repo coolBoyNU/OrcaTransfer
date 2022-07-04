@@ -1,1 +1,18 @@
-/* pages/coupons/coupons.wxss */
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+.nav-header {
+  height: 200rpx;
+  background-color: #e7691d;
+}
+
+.nav-main-image {
+  padding: 42rpx;
+
+  image {
+    width: px2rpx(333);
+    height: px2rpx(120);
+    margin-bottom: 20rpx;
+  }
+}

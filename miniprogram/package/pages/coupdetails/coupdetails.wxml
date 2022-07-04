@@ -1,0 +1,60 @@
+<view id="coupdetails">
+  <view class="nav-header">
+    <view class="coup-info">
+      <view class="price-left">
+        ¥<text class="left-site">10</text>
+        <view>满¥599使用</view>
+      </view>
+      <view class="price-right">
+        <view class="right-ju1">
+          <text class="ju1-top">满减卷</text>
+          <text>双十一无门槛10元卷</text>
+        </view>
+        <view class="right-ju2">
+          <text>2018.04.11到期</text>
+          <text class="ju2-suttle">(仅剩1天)</text>
+          <van-button type="danger">立即领取</van-button>
+        </view>
+      </view>
+    </view>
+
+    <!--  -->
+    <view class="coup-footer">
+      <text>全场通用</text>
+      <view>
+        <van-icon name="arrow-down" size="18px" />
+      </view>
+    </view>
+  </view>
+
+
+  <view class="nav-conter">
+    <text class="conter-title">使用须知</text>
+    <view class="details">
+      <block wx:for="{{detailsData}}" wx:key="index">
+        <view class="details-top">{{item.title}}</view>
+        <view>{{item.center}}</view>
+      </block>
+    </view>
+
+    <view class="details">
+      <block wx:for="{{expiredDate}}" wx:key="index">
+        <view class="details-top">{{item.title}}</view>
+        <view>{{item.center}}</view>
+      </block>
+    </view>
+
+    <view class="details">
+      <view class="details-top">使用规则</view>
+      <block wx:for="{{rule}}" wx:key="index">
+        <view class="ul-style">
+          <text class="font">{{item.center}}</text>
+        </view>
+      </block>
+    </view>
+
+
+  </view>
+
+
+</view>

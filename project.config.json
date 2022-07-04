@@ -25,8 +25,13 @@
     "enhance": true,
     "useMultiFrameRuntime": true,
     "showShadowRootInWxmlPanel": true,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./node_modules"
+      }
+    ],
     "minifyWXSS": true,
     "useStaticServer": true,
     "showES6CompileOption": false,
@@ -43,7 +48,7 @@
   "simulatorPluginLibVersion": {},
   "condition": {},
   "srcMiniprogramRoot": "miniprogram/",
-  "appid": "wx456e99a859451dc0",
+  "appid": "wx462bc4b528a13c96",
   "libVersion": "2.24.7",
   "editorSetting": {
     "tabIndent": "insertSpaces",

@@ -1,28 +1,18 @@
-/**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-}
-
-
-//-------- 公共样式-----------------
 @function px2rpx($px) {
   @return $px*2+rpx;
 }
 
+.line_color {
+  color: blue;
+}
+
 .line_ellipsis_l1 {
-  // 文字不允许换行（单行文本）
+  /*1.先强制一行内显示文本*/
   white-space: nowrap;
-  // 溢出部分隐藏
+  /*2.超出的部分隐藏*/
   overflow: hidden;
-  // 文本溢出后，使用 ... 代替
+  /*3.文字用省略号替代超出的部分*/
   text-overflow: ellipsis;
-  margin-right: 3px;
 }
 
 .line_ellipsis_l2 {

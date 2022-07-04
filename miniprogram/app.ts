@@ -1,4 +1,6 @@
 // app.ts
+//自定义弹窗
+import './utils/showmsg'
 App<IAppOption>({
   globalData: {},
   onLaunch() {

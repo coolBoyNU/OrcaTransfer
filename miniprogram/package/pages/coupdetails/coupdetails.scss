@@ -1,0 +1,133 @@
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+#coupdetails {
+  padding: px2rpx(10);
+}
+
+.nav-header {
+  width: px2rpx(355);
+  height: px2rpx(121);
+  margin: px2rpx(16) 0;
+
+  .coup-info {
+    display: flex;
+    align-items: center;
+    height: px2rpx(90);
+    border-bottom: px2rpx(1) dashed #e7691d;
+    font-size: px2rpx(12);
+    color: #444444;
+
+    .price-left {
+      padding: px2rpx(10) px2rpx(20);
+      border-right: 1px dashed #e7691d;
+
+      .left-site {
+        font-size: px2rpx(40);
+        font-weight: bold;
+      }
+    }
+
+    .price-right {
+      padding: px2rpx(24) 0 0 px2rpx(8);
+
+      .right-ju1 {
+        font-size: px2rpx(13);
+        font-weight: 700;
+        color: #6e446e;
+        margin-bottom: px2rpx(12);
+
+        .ju1-top {
+          width: px2rpx(36);
+          height: px2rpx(15);
+          background-color: #f6390d;
+          color: white;
+          margin-right: px2rpx(5);
+          padding: 0 px2rpx(4);
+          box-sizing: border-box;
+        }
+      }
+
+      .right-ju2 {
+        display: flex;
+        align-items: center;
+        color: #999ba9;
+        font-weight: bold;
+
+        .ju2-suttle {
+          display: block;
+          margin: 0 px2rpx(6);
+          color: #e7691d;
+        }
+
+        .van-button {
+          width: px2rpx(64);
+          height: px2rpx(26);
+          border-radius: px2rpx(40);
+          font-size: px2rpx(12);
+          padding: 0;
+          color: white;
+        }
+      }
+    }
+
+
+
+  }
+
+  .coup-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: px2rpx(30);
+    padding: 0 px2rpx(20);
+    color: #444444;
+    font-size: px2rpx(12);
+    font-weight: bold;
+  }
+
+}
+
+//使用须知
+.nav-conter {
+  padding: px2rpx(10) px2rpx(16);
+
+  .conter-title {
+    font-size: px2rpx(18);
+    font-weight: bolder;
+  }
+
+  .details {
+    margin-top: px2rpx(20);
+    line-height: px2rpx(25);
+    margin-bottom: px2rpx(20);
+    width: px2rpx(325);
+
+    .details-top {
+      font-weight: bolder;
+      font-size: px2rpx(15);
+      // transform: scaleY(0.9);
+    }
+
+    .ul-style {
+      .font {
+        position: relative;
+        margin-left: px2rpx(16);
+        color: #101010;
+
+        & :before {
+          position: absolute;
+          top: px2rpx(10);
+          left: px2rpx(-15);
+          width: px2rpx(5);
+          height: px2rpx(5);
+          border: px2rpx(1) solid #101010;
+          border-radius: px2rpx(30);
+          content: ' ';
+        }
+      }
+
+    }
+  }
+}

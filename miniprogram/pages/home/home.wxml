@@ -14,9 +14,30 @@
         <image src="../../static/homePublic/Plane.png" mode="widthFix"></image>
         <text>美国</text>
       </view>
-      <button>立即转运</button>
+      <van-button bindtap="isBtn">立即转运</van-button>
     </view>
   </view>
+
+  <!-- 遮罩层 -->
+  <van-overlay show="{{ isShow }}" bind:click="onClickHide">
+    <view class="wrapper">
+      <view class="block" catch:tap="noop">
+        <view class="wra-title">
+          <text>预选渠道</text>
+        </view>
+        <view class="wra-center">
+          <block wx:for="{{channel}}" wx:key="index">
+            <view class="van-tus {{ins===index?'selected':''}}" bindtap="isStatus" data-ins="{{index}}" data-DT="{{item.title}}">{{item.title}}</view>
+          </block>
+        </view>
+        <view class="wra-footer">
+          <van-button plain bindtap="iscll">取消</van-button>
+          <van-button plain type="primary" bindtap="affirm">下一步</van-button>
+        </view>
+      </view>
+    </view>
+  </van-overlay>
+
   <!-- 客服 -->
   <view class="nav-process">
     <view class="service">

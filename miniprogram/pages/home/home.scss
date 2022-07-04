@@ -1,4 +1,8 @@
 /* pages/home/home.wxss */
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
 #Home {
   background-color: #f7f6f6;
   overflow: hidden;
@@ -59,12 +63,79 @@
       }
 
       button {
+        width: 324rpx;
+        height: 76rpx;
+        border-radius: 8rpx;
         font-weight: 500;
         color: white;
         background-color: #4E148C;
       }
     }
   }
+
+  //遮罩
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .block {
+      width: px2rpx(310);
+      height: px2rpx(285);
+      line-height: px2rpx(20);
+      border-radius: px2rpx(4);
+      background-color: #fff;
+      padding: 0 px2rpx(27);
+      box-sizing: border-box;
+
+      .wra-title {
+        padding: px2rpx(17) 0;
+        text-align: center;
+        font-size: px2rpx(18);
+        font-weight: bold;
+        letter-spacing: px2rpx(2);
+      }
+
+      .wra-center {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .van-tus {
+          width: px2rpx(114);
+          line-height: px2rpx(48);
+          border-radius: px2rpx(7);
+          text-align: center;
+          border: px2rpx(1) solid #bbb;
+          color: #4C168E;
+          font-size: px2rpx(16);
+          margin-bottom: px2rpx(11);
+        }
+
+        .selected {
+          background-color: #4C168E;
+          color: white;
+          border: px2rpx(1) solid #4C168E;
+        }
+      }
+
+      .wra-footer {
+        display: flex;
+        justify-content: space-between;
+
+        .van-button {
+          width: px2rpx(110);
+          height: px2rpx(48);
+          border: none;
+          font-weight: bold;
+          font-size: px2rpx(16);
+        }
+      }
+    }
+  }
+
+
 
   .nav-process {
     margin-top: 40rpx;

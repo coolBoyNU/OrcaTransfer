@@ -1,0 +1,64 @@
+<view id="orderInfo">
+  <view class="nav-information">
+    <block wx:for="{{news}}" wx:key="index">
+      <view class="wz-top">
+        <view class="wz-tb-bg">
+          <van-icon name="{{item.icon}}" style=" background-color:{{item.color}};border-radius: 120rpx;" />
+        </view>
+        <view class="wx-right">
+          <view class="wz-my-name">
+            <text class="my-name">{{item.name}}</text>
+            <text>{{item.phone}}</text>
+            <!-- 值等于1显示 -->
+            <text class="copy" wx:if="{{item.cop?1:''}}" bindtap="copyPhone">复制</text>
+          </view>
+          <view class="wz-my-address">
+            <text>{{item.add}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+
+  <!-- 快递个数 -->
+  <view class="nav-number">
+    <view class="num-top">
+      <van-icon name="warning-o" />
+      <text> 快递全部到齐点击确认打包后，订单不可修改</text>
+    </view>
+    <view class="num-enter">
+      <label for="num">快递个数</label>
+      <input type="number" id="num" placeholder="请输入（输入后弹出快递单号位置" maxlength="10" />
+    </view>
+
+    <!-- 输入内容 -->
+    <view class="kd-conter">
+      <textarea id="story" placeholder-style="font-size:24rpx;" placeholder="备注信息,列如: 去掉包装盒等">
+       </textarea>
+    </view>
+  </view>
+
+  <!-- 订单信息 -->
+  <view class="nav-xx">
+    <view class="xx-left">
+      <view>订单号:</view>
+      <view>转运线路:</view>
+      <view>预选渠道:</view>
+      <view>订单状态:</view>
+      <view>下单时间:</view>
+    </view>
+
+
+    <!-- 22 -->
+    <view class="xx-right">
+      <view class="line_ellipsis_l1">298267132913123213 <text class="xx-copy" bindtap="xxCopy">复制</text></view>
+      <view>中国 — 美国</view>
+      <view class="line_ellipsis_l1">{{ditch}}</view>
+      <view>待填状态</view>
+      <view>2022-06-12 12:34:33</view>
+    </view>
+  </view>
+
+</view>

@@ -1,2 +1,52 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view id="My">
+  <view class="nav-top-bg">
+    <view class="min-left">
+      <image src="https://cdn.nlark.com/yuque/0/2022/jpeg/anonymous/1647868315349-3dd0a8e6-5f4a-43ab-80d1-476cae7d2c8d.jpeg?x-oss-process=image%2Fresize%2Cm_fill%2Cw_48%2Ch_48%2Fformat%2Cpng"></image>
+    </view>
+    <view class="min-right">
+      <view class="min-name">ouyang</view>
+      <view class="min-coding">编码:herb</view>
+    </view>
+  </view>
+
+  <!-- 我的订单 -->
+  <view class="nav-order">
+    <van-cell-group inset>
+      <van-cell title="我的订单" value="全部订单" is-link />
+      <view class="cell-flex">
+        <view class="stay-box">
+          <van-icon name="balance-pay" size="30px" color="#389fec" info="2" />
+          <view>待付款</view>
+        </view>
+        <view class="stay-box">
+          <van-icon name="logistics" size="30px" color="#389fec" info="2" />
+          <view>待发货</view>
+        </view>
+        <view class="stay-box">
+          <van-icon name="send-gift-o" size="30px" color="#389fec" info="2" />
+          <view>待收货</view>
+        </view>
+        <view class="stay-box">
+          <van-icon name="flower-o" size="30px" color="#389fec" info="2" />
+          <view>待评价</view>
+        </view>
+      </view>
+    </van-cell-group>
+  </view>
+  <!-- 地址 -->
+  <view class="nav-footer">
+    <van-cell-group inset>
+      <van-cell title="我的地址" is-link />
+      <van-cell title="我的优惠卷" is-link />
+      <van-cell title="活动中心" is-link />
+      <van-cell title="联系客服" is-link />
+      <van-cell title="转运流程" is-link />
+      <van-cell title="转运须知" is-link />
+      <van-cell title="关于我们" is-link />
+    </van-cell-group>
+
+  </view>
+
+
+
+</view>

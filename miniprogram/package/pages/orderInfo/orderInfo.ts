@@ -1,43 +1,61 @@
-// package/pages/respository/respository.ts
+// package/pages/orderInfo/orderInfo.ts
+import { getOrderId } from '../../../utils/util'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    info: [
-      { name: '收件人', content: '虎鲸仓库' },
-      { name: '收货地址', content: '深圳市龙华区龙华街道工业路壹城环智中心C座2601号仓库' },
-      { name: '联系电话', content: '1546668888' },
-      { name: '邮政编码', content: '618000' },
+    news: [
+      { name: '新希望仓库', phone: '18688880130', add: '深圳市龙华区龙华街道工业路壹城环智中心C座2607室', icon: 'location-o', color: '#59b850', cop: 1 },
+      {
+        name: 'KK Chen', phone: '18688333332', add: 'MEGASYSTEMS INC 799 E DRAGRAM SUITE 5A TUCSON, AZ 85705 USA', icon: 'home-o',
+        color: '#4c168e'
+      },
     ],
-    allData: ''
+    ditch: '',
   },
 
-  copy() {
-    this.data.info.forEach(item => {
-      this.setData({
-        allData: this.data.allData += `${item.content}  `
-      })
+  //复制号码
+  copyPhone() {
+    let res = this.data.news.filter(item => {
+      return item.cop === 1 ? item.phone : ''
     })
-    let _this = this
+    let phone = ''
+    res.forEach(item => {
+      phone = item.phone
+    })
     //一键获取剪贴板内容
     wx.getClipboardData({
       success() {
         wx.setClipboardData({
-          data: _this.data.allData,
+          data: phone,
           success() {
             wx.$showMsg('复制成功')
           }
         })
       }
     })
+
+
+
+  },
+
+  //复制订单号
+  xxCopy() {
+    console.log(111);
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
+  onLoad(open: any) {
+    console.log(open);
+    this.setData({
+      ditch: open.TD
+    })
+    console.log('时间戳', getOrderId());
 
   },
 
