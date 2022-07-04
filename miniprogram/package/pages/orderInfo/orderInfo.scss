@@ -79,6 +79,8 @@
   }
 
   .num-enter {
+    position: relative;
+
     label {
       position: relative;
       top: px2rpx(2);
@@ -101,14 +103,15 @@
     }
 
     #num {
-      float: right;
+      position: absolute;
+      top: 0;
+      right: px2rpx(27);
       width: px2rpx(180);
       height: px2rpx(26);
       font-size: px2rpx(12);
       border: px2rpx(1) solid #888;
       border-radius: px2rpx(7);
       padding: 0 px2rpx(6);
-      margin-right: px2rpx(25);
     }
   }
 
@@ -123,7 +126,7 @@
     #story {
       width: px2rpx(280);
       height: px2rpx(100);
-      padding: px2rpx(6) px2rpx(10);
+      padding: px2rpx(6);
       font-size: px2rpx(13);
       box-sizing: border-box;
     }
