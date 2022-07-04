@@ -5,6 +5,15 @@
     "pages/my/my",
     "pages/coupons/coupons"
   ],
+  "subPackages": [
+    {
+      "root": "package",
+      "name": "p1",
+      "pages": [
+        "pages/respository/respository"
+      ]
+    }
+  ],
   "tabBar": {
     "selectedColor": "#4c168e",
     "list": [
@@ -36,9 +45,9 @@
   },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#4E148C",
+    "navigationBarTitleText": "虎鲸转运",
+    "navigationBarTextStyle": "white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

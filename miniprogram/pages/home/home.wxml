@@ -1,2 +1,68 @@
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view id="Home">
+  <view class="header-bg">
+    <swiper indicator-dots circular autoplay interval="3000">
+      <swiper-item>
+        <image src="../../static/swiper/tu1.png" mode="widthFix"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="../../static/swiper/tu2.png" mode="widthFix"></image>
+      </swiper-item>
+    </swiper>
+    <view class="nav-content">
+      <view class="place">
+        <text>中国</text>
+        <image src="../../static/homePublic/Plane.png" mode="widthFix"></image>
+        <text>美国</text>
+      </view>
+      <button>立即转运</button>
+    </view>
+  </view>
+  <!-- 客服 -->
+  <view class="nav-process">
+    <view class="service">
+      <view class="customer">
+        <image src="../../static/homePublic/serviceFigure.png" mode="widthFix"></image>
+      </view>
+      <view class="fontConter">
+        <view>联系虎鲸</view>
+        <view>为您解决下单疑问？</view>
+      </view>
+      <image src="../../static/homePublic/arrowD.png" mode="widthFix"></image>
+    </view>
+
+    <!-- 转运-运费 -->
+    <view class="processor">
+      <view class="transhipment">
+        <view>转运须知</view>
+        <view>流程和注意事项</view>
+        <view class="zy-bottom">
+          <image class="zy-one" src="../../static/homePublic/arrowX.png"></image>
+          <image class="zy-two" src="../../static/homePublic/car.png"></image>
+        </view>
+      </view>
+
+      <!-- 2 -->
+      <view class="transhipment freight">
+        <view>运费计算</view>
+        <view>费用心中有数</view>
+        <view class="zy-bottom">
+          <image class="zy-one freone" src="../../static/homePublic/arrowX.png"></image>
+          <image class="zy-two fretow" src="../../static/homePublic/calculator.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="nav-flow">
+    <view class="flow-title">轻松转运</view>
+    <image src="../../static/homePublic/Process.png"></image>
+  </view>
+
+  <view class="nav-bottom-btn">
+    <navigator class="CaseGO" url="../../package/pages/respository/respository">
+      <image src="../../static/homePublic/copy.png"></image>
+      复制仓库地址去购物
+    </navigator>
+    <view>电商平台的收货地址请填我们</view>
+  </view>
+
+</view>

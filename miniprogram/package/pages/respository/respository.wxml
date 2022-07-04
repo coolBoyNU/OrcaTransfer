@@ -1,0 +1,65 @@
+<view id="respository">
+  <view class="nav-panel">
+    <view class="panel-title">
+      <image src="../../../static/respositorY/wiezhi.png"></image>
+      <text>仓库地址</text>
+    </view>
+    <view class="pane-form">
+      <block wx:for="{{info}}" wx:key="index">
+        <view class="bvv">
+          <view class="label">{{item.name}}：</view>
+        </view>
+        <view class="labelinfo">{{item.content}}</view>
+
+      </block>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <view class="nav-copyBtn">
+    <button bindtap="copy">一键复制仓库地址信息</button>
+  </view>
+
+  <view class="nav-flow">
+    <view class="info">
+      <view class="flow-title">
+        第一步将包裹寄到河马转运仓
+      </view>
+      <view class="flow-text">
+        复制以上收件人信息并添加到淘宝等网购平台，以河马转运为收货人ID号作为包裹识别归属的主要途径，请务必作为收件人信息的一部分完整保留;
+      </view>
+    </view>
+
+    <view class="info">
+      <view class="flow-title">
+        第二步报备包裹国内快递单号
+      </view>
+      <view class="flow-text">
+        快递寄出后将国内快递单号添加至河马转运，因国
+        内部分快递公司会隐藏ID号，请自主添加单号备，以免
+        x 识别为无名包事造成不必要的损失:
+      </view>
+    </view>
+
+    <view class="info">
+      <view class="flow-title">
+        第三步提交打包
+      </view>
+      <view class="flow-text">
+        包裹入库验货后，选择你要寄送的包事提交打包并
+        选择线路渠道，打包时间通常为当天提交次日18:OO前完
+        成打包;
+      </view>
+    </view>
+
+    <view class="info">
+      <view class="flow-title">
+        第四步支付运费
+      </view>
+      <view class="flow-text">
+        打包完成后确认重量与运费明细，完成支付后当日
+        出库提交转运
+      </view>
+    </view>
+  </view>
+
+</view>

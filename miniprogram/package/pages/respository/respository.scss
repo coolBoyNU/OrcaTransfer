@@ -1,0 +1,93 @@
+#respository {
+  padding: 28rpx;
+
+
+  .nav-panel {
+    width: 694rpx;
+    height: 458rpx;
+    line-height: 64rpx;
+    padding: 22rpx 50rpx;
+    box-sizing: border-box;
+    margin-top: 10rpx;
+    box-shadow: 0 0 12rpx -2rpx black;
+
+    .panel-title {
+      font-size: 40rpx;
+      font-weight: bold;
+
+      image {
+        width: 40rpx;
+        height: 40rpx;
+        background-color: #FFA726;
+        border-radius: 50rpx;
+        padding: 10rpx;
+      }
+
+
+      text {
+        vertical-align: top;
+        letter-spacing: 5rpx; //字体间距
+        margin-left: 20rpx;
+      }
+    }
+
+    .pane-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .label {
+        font-size: 32rpx;
+        font-weight: 600;
+      }
+
+      .labelinfo {
+        width: 420rpx;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      .bvv {
+        display: flex;
+        justify-content: flex-end;
+        width: 160rpx;
+      }
+    }
+  }
+
+  //复制按钮
+  .nav-copyBtn {
+    margin-top: 60rpx;
+
+    button {
+      width: 330px;
+      height: 40px;
+      color: white;
+      font-size: 32rpx;
+      font-weight: 500;
+      border-radius: 60rpx;
+      background-color: #3688F0;
+    }
+  }
+
+  .nav-flow {
+    margin-top: 60rpx;
+
+    .info {
+      margin-bottom: 60rpx;
+
+      .flow-title {
+        font-size: 36rpx;
+        font-weight: bold;
+      }
+
+      .flow-text {
+        margin-top: 12rpx;
+        text-indent: 2em;
+      }
+    }
+  }
+}

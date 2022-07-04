@@ -1,1 +1,226 @@
 /* pages/home/home.wxss */
+#Home {
+  background-color: #f7f6f6;
+  overflow: hidden;
+
+
+  .header-bg {
+    position: relative;
+    height: 700rpx;
+    background-color: #4E148C;
+    border-radius: 0 0 50% 50%;
+
+    swiper {
+      width: 100%;
+      background-color: #4E148C;
+      padding: 10rpx;
+
+      swiper-item {
+        border-radius: 12rpx;
+        overflow: hidden;
+
+        image {
+          width: 97.5%;
+          height: 100%;
+        }
+      }
+    }
+
+    .nav-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 624rpx;
+      height: 386rpx;
+      margin: 30rpx 60rpx 10rpx 60rpx;
+      background-color: white;
+      border-radius: 28rpx;
+      box-shadow: 0 0 20rpx -3rpx black;
+
+      .place {
+        display: flex;
+        justify-content: space-between;
+        width: 490rpx;
+        margin: 60rpx 0 40rpx 0;
+
+        text {
+          font-weight: 500;
+          font-size: 56rpx;
+          color: #101010;
+        }
+
+        image {
+          width: 46px;
+          height: 46px;
+
+        }
+
+      }
+
+      button {
+        font-weight: 500;
+        color: white;
+        background-color: #4E148C;
+      }
+    }
+  }
+
+  .nav-process {
+    margin-top: 40rpx;
+    padding: 25rpx;
+
+    .service {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 714rpx;
+      height: 100rpx;
+      background-color: #FF6600;
+      border-radius: 60rpx;
+
+      .customer {
+        width: 116rpx;
+        height: 116rpx;
+        margin-left: -2rpx;
+
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .fontConter {
+        margin: 0 270rpx 0 20rpx;
+        color: #F7F6F6;
+        font-size: 32rpx;
+        font-weight: 600;
+
+        view:nth-child(2) {
+          color: #E2E2E2;
+          font-size: 24rpx;
+        }
+
+      }
+
+      image {
+        width: 54rpx;
+        height: 54rpx;
+        margin-right: 20rpx;
+      }
+    }
+
+    .processor {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20rpx;
+
+      .transhipment {
+        width: 324rpx;
+        height: 324rpx;
+        border-radius: 20rpx;
+        padding: 30rpx 0 0 30rpx;
+        background-color: #9877bb;
+        box-sizing: border-box;
+        box-shadow: 0 0 14rpx -3rpx black;
+
+        view {
+          font-size: 56rpx;
+          color: #F7F6F6;
+        }
+
+        view:nth-child(2) {
+          margin-top: 20rpx;
+          font-size: 28rpx;
+        }
+
+        .zy-bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .zy-one {
+            width: 42rpx;
+            height: 42rpx;
+            background-color: #4E148C;
+            border-radius: 20rpx;
+            padding: 4rpx;
+            margin-left: 10rpx;
+            box-sizing: border-box;
+            box-shadow: 0 0 12rpx -1rpx black;
+          }
+
+          .zy-two {
+            width: 178rpx;
+            height: 178rpx;
+            margin-right: -15rpx;
+          }
+        }
+      }
+
+      .freight {
+        background-color: #fc9d62;
+
+        view {
+          color: #E7691D;
+        }
+
+        .zy-bottom {
+          .freone {
+            background-color: #E7691D;
+          }
+
+          .fretow {
+            width: 128rpx;
+            height: 128rpx;
+            margin: 24rpx 0;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-flow {
+    margin-top: 60rpx;
+
+    .flow-title {
+      font-weight: bold;
+      font-size: 56rpx;
+      margin-left: 40rpx;
+    }
+
+    image {
+      width: 750rpx;
+      height: 218rpx;
+    }
+  }
+
+  .nav-bottom-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 160rpx 0;
+    font-weight: bold;
+    font-size: 28rpx;
+    color: #4E148C;
+    text-align: center;
+
+    .CaseGO {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 330px;
+      height: 40px;
+      font-size: 32rpx;
+      color: white;
+      border-radius: 60rpx;
+      background-color: #4E148C;
+
+      image {
+        width: 34rpx;
+        height: 34rpx;
+        margin-right: 10rpx;
+      }
+    }
+  }
+}
