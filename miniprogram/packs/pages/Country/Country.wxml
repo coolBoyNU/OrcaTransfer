@@ -1,0 +1,20 @@
+<view id="country">
+  <view class="nav-search">
+    <van-icon name="search" />
+    <input type="text" bindinput="bindKeyInput" value="{{inputValue}}" placeholder="选择国家或地区" />
+  </view>
+
+  <!-- 列表 -->
+  <van-index-bar>
+    <block wx:for="{{newOptions}}" wx:key="index">
+      <view>
+        <van-index-anchor index="{{item.n}}" />
+        <van-cell-group inset>
+          <block wx:for="{{item.j}}" wx:key="index">
+            <van-cell link-type="reLaunch" url="../../../pages/home/home?coun={{item.label}}" clickable title="{{item.label}}" value="{{item.value}}" />
+          </block>
+        </van-cell-group>
+      </view>
+    </block>
+  </van-index-bar>
+</view>

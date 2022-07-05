@@ -1,0 +1,32 @@
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+#country {
+  height: 100%;
+  background-color: #f5f5f5;
+  border-top: px2rpx(1) solid #E9E9E9;
+}
+
+.nav-search {
+  height: px2rpx(60);
+  padding: 0 px2rpx(20);
+  background-color: white;
+
+
+  .van-icon {
+    position: absolute;
+    top: px2rpx(28);
+    left: px2rpx(25);
+    font-size: px2rpx(20);
+    font-weight: bold;
+    color: black;
+  }
+
+  input {
+    height: px2rpx(30);
+    padding: 0 px2rpx(30);
+    font-size: px2rpx(13);
+    border-bottom: px2rpx(1) solid #F759AB;
+  }
+}

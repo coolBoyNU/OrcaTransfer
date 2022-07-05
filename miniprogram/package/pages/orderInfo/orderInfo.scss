@@ -131,6 +131,45 @@
       box-sizing: border-box;
     }
   }
+
+  .dd-input {
+    width: px2rpx(280);
+    margin: px2rpx(22) px2rpx(22) px2rpx(15) px2rpx(22);
+
+    .inputBox {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-bottom: px2rpx(10);
+
+      input {
+        width: px2rpx(252);
+        height: px2rpx(30);
+        border: px2rpx(1) solid #BBB;
+        border-radius: px2rpx(5);
+        margin-left: px2rpx(10);
+        padding: 0 px2rpx(20) 0 px2rpx(7);
+        font-size: px2rpx(14);
+      }
+
+      .van-icon {
+        position: absolute;
+        right: px2rpx(6);
+      }
+    }
+
+    //添加按钮
+    .van-button {
+      position: relative;
+      top: 0;
+      left: px2rpx(160);
+      width: px2rpx(111);
+      height: px2rpx(26);
+      font-size: px2rpx(10);
+      border-radius: px2rpx(12);
+
+    }
+  }
 }
 
 //订单信息

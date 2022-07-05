@@ -1,5 +1,6 @@
-// package/pages/orderInfo/orderInfo.ts
+import { inputProps } from 'miniprogram/miniprogram_npm/@vant/weapp/field/props'
 import { getOrderId } from '../../../utils/util'
+
 Page({
 
   /**
@@ -14,6 +15,9 @@ Page({
       },
     ],
     ditch: '',
+    inputValue: null, // 输入框
+    isDisabled: false, //输入框状态
+    isFocus: false, //获取焦点
   },
 
   //复制号码
@@ -47,13 +51,62 @@ Page({
 
   },
 
+  //输入框
+  bindKeyInput(e: any) {
+    let reg = /\d/g
+    if (!reg.test(e.detail.value)) return wx.$showMsg('请输入数字')
+    let res = Number(e.detail.value)
+    let _this = this
+    if (res > 100) return wx.showModal({
+      title: '提示',
+      content: '快递不能超过100个，如有疑问或快递较多，请联系客服！',
+      confirmText: "联系客服",
+      cancelText: "重新输入",
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          _this.setData({
+            isFocus: true,
+            inputValue: null,
+          })
+        }
+      }
+    })
+
+    this.setData({
+      // @ts-ignore//
+      inputValue: res ? res : '',
+      isDisabled: true,
+    })
+  },
+
+
+  //补充单号
+  tickets() {
+    const _this = this
+    wx.showModal({
+      title: '是否增加快递单号？',
+      content: '增加快递单号后，发往转运中心的快递个数+ 1。是否要继续？',
+      success(res) {
+        if (res.confirm) {
+          _this.setData({
+            // @ts-ignore
+            inputValue: ++_this.data.inputValue
+          })
+        }
+      }
+    })
+
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(open: any) {
-    console.log(open);
+  onLoad(optlons: any) {
     this.setData({
-      ditch: open.TD
+      ditch: optlons.TD
     })
     console.log('时间戳', getOrderId());
 

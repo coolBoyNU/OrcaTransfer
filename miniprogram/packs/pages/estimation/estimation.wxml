@@ -1,0 +1,29 @@
+<view id="Estimation">
+  <view class="nav-bg">
+    <image src="../../../static/estimation/bg-enlts.png" mode="widthFix"></image>
+  </view>
+  <view class="nav-yf-est">
+    <view class="yf-title">
+      <text>预估运费</text>
+    </view>
+
+    <!-- 1 -->
+    <view class="yf-way">
+      <view class="yf-left-way">
+        转运渠道 <rich-text></rich-text>普通货物
+      </view>
+      <view class="yf-left-way yf-right">
+        预估重量<rich-text></rich-text>请输入重量
+      </view>
+    </view>
+    <!-- 2 -->
+    <view class="tj-calculate">
+      预估体积 <rich-text></rich-text>请输入长宽高
+    </view>
+    <!-- 3 -->
+    <view class="jg-price">
+      预估运费（实际结果以订单为准）
+      <view>¥ 0.00</view>
+    </view>
+  </view>
+</view>

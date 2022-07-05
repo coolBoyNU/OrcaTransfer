@@ -1,5 +1,4 @@
 // pages/home/home.ts
-
 Page({
 
   /**
@@ -16,6 +15,7 @@ Page({
     ],
     ins: 0,
     DT: '普通货物',
+    country: '美国', //国家
   },
   //立即转运
   isBtn() {
@@ -49,8 +49,11 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
-
+  onLoad(options: object | any) {
+    console.log(options);
+    this.setData({
+      country: options.coun
+    })
   },
 
   /**

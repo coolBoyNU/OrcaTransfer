@@ -30,13 +30,24 @@
     </view>
     <view class="num-enter">
       <label for="num">快递个数</label>
-      <input type="number" id="num" placeholder="请输入（输入后弹出快递单号位置" maxlength="10" />
+      <input type="number" bindblur="bindKeyInput" value="{{inputValue}}" id="num" disabled="{{isDisabled}}" focus="{{isFocus}}" placeholder="请输入（输入后弹出快递单号位置" />
     </view>
 
     <!-- 输入内容 -->
     <view class="kd-conter">
       <textarea id="story" placeholder-style="font-size:24rpx;" placeholder="备注信息,列如: 去掉包装盒等">
        </textarea>
+    </view>
+
+    <!-- 输入订单号 -->
+    <view class="dd-input" wx:if="{{inputValue?inputValue:''}}">
+      <block wx:for="{{inputValue}}" wx:key="index">
+        <view class="inputBox">
+          {{index+1}}. <input type="text" placeholder="请输入快递单号" />
+          <van-icon name="delete-o" />
+        </view>
+      </block>
+      <van-button plain type="primary" bindtap="tickets">+ 补充快递单号</van-button>
     </view>
   </view>
 
@@ -51,7 +62,7 @@
     </view>
 
 
-    <!-- 22 -->
+    <!-- 右边 -->
     <view class="xx-right">
       <view class="line_ellipsis_l1">298267132913123213 <text class="xx-copy" bindtap="xxCopy">复制</text></view>
       <view>中国 — 美国</view>

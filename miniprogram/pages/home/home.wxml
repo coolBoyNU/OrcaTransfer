@@ -12,7 +12,7 @@
       <view class="place">
         <text>中国</text>
         <image src="../../static/homePublic/Plane.png" mode="widthFix"></image>
-        <text>美国</text>
+        <navigator url="../../packs/pages/Country/Country"><text class="coni line_ellipsis_l1">{{country}}</text></navigator>
       </view>
       <van-button bindtap="isBtn">立即转运</van-button>
     </view>
@@ -63,14 +63,16 @@
       </view>
 
       <!-- 2 -->
-      <view class="transhipment freight">
-        <view>运费计算</view>
-        <view>费用心中有数</view>
-        <view class="zy-bottom">
-          <image class="zy-one freone" src="../../static/homePublic/arrowX.png"></image>
-          <image class="zy-two fretow" src="../../static/homePublic/calculator.png"></image>
+      <navigator url="../../packs/pages/estimation/estimation">
+        <view class="transhipment freight">
+          <view>运费计算</view>
+          <view>费用心中有数</view>
+          <view class="zy-bottom">
+            <image class="zy-one freone" src="../../static/homePublic/arrowX.png"></image>
+            <image class="zy-two fretow" src="../../static/homePublic/calculator.png"></image>
+          </view>
         </view>
-      </view>
+      </navigator>
     </view>
   </view>
   <view class="nav-flow">

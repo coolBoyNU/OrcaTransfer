@@ -14,6 +14,14 @@
         "pages/coupdetails/coupdetails",
         "pages/orderInfo/orderInfo"
       ]
+    },
+    {
+      "root": "packs",
+      "name": "p2",
+      "pages": [
+        "pages/Country/Country",
+        "pages/estimation/estimation"
+      ]
     }
   ],
   "tabBar": {

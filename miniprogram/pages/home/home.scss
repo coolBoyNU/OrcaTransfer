@@ -43,21 +43,32 @@
       box-shadow: 0 0 20rpx -3rpx black;
 
       .place {
+        position: relative;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         width: 490rpx;
         margin: 60rpx 0 40rpx 0;
 
         text {
-          font-weight: 500;
+          font-weight: 4 00;
           font-size: 56rpx;
           color: #101010;
         }
 
-        image {
-          width: 46px;
-          height: 46px;
+        .coni {
+          position: absolute;
+          right: 0;
+          min-width: px2rpx(50);
+          max-width: px2rpx(90);
+          height: px2rpx(40);
+          display: inline-block;
 
+        }
+
+        image {
+          width: px2rpx(46);
+          height: px2rpx(46);
+          margin-left: px2rpx(40);
         }
 
       }
@@ -280,8 +291,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 330px;
-      height: 40px;
+      width: px2rpx(330);
+      height: px2rpx(40);
       font-size: 32rpx;
       color: white;
       border-radius: 60rpx;
