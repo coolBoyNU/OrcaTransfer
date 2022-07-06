@@ -1,0 +1,32 @@
+<!-- 优惠卷 -->
+<view class="k-coup">
+  <!-- 1 -->
+  <view class="j-bg">
+    <image class='b-background' src="{{datalist.bg}}" mode="aspectFill"></image>
+    <view class="j-title">
+      <text>{{datalist.price}}</text>{{datalist.unit}}
+    </view>
+
+    <view class="j-font">
+      <text>{{datalist.exg}}</text>
+    </view>
+  </view>
+  <!-- 2 -->
+  <view class="j-font-e">
+    <view class="font-z">{{datalist.title}}</view>
+    <view>{{datalist.date}}</view>
+  </view>
+  <!-- 圆 -->
+  <view class="j-use">
+    <image src="{{datalist.bg2}}"></image>
+  </view>
+
+  <!-- 3 -->
+  <view class="j-icon">
+    <image class='b-background' src="{{datalist.bg3}}" mode="aspectFill"></image>
+    <view class="icon-x">
+      <image src="{{datalist.bg4}}"></image>
+    </view>
+  </view>
+
+</view>

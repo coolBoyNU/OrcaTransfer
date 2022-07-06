@@ -1,0 +1,29 @@
+<view id="MyCoupon">
+  <view class="nav-card">
+    <!-- 优惠卷 -->
+    <block wx:for="{{list}}" wx:key="index">
+      <i-card datalist="{{item}}"></i-card>
+    </block>
+  </view>
+  <view class="nav-btn">
+    <van-button bindtap="onClickShow">兑换优惠券</van-button>
+  </view>
+
+  <!-- 遮罩 -->
+  <van-overlay show="{{ show }}">
+    <view class="wrapper">
+      <view class="block" catch:tap="noop">
+        <view class="yj-title">兑换优惠卷</view>
+
+        <view class="yj-input">
+          <input type="text" placeholder="请输入优惠卷code，进行兑换" />
+        </view>
+        <view class="yj-btn">
+          <view catchtap="onHideod">取消</view>
+          <view class="yj-confirm">确认</view>
+        </view>
+
+      </view>
+    </view>
+  </van-overlay>
+</view>

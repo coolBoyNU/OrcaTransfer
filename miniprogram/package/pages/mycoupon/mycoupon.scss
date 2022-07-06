@@ -1,0 +1,76 @@
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+#MyCoupon {
+  padding: px2rpx(20) px2rpx(12);
+
+  //按钮
+  .nav-btn {
+    margin-top: px2rpx(40);
+    text-align: center;
+
+    .van-button {
+      width: px2rpx(176);
+      height: px2rpx(36);
+      background-color: #0B73F7;
+      border-radius: px2rpx(4);
+      color: white;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .block {
+    width: px2rpx(310);
+    height: px2rpx(159);
+    background-color: #fff;
+    border-radius: px2rpx(8);
+
+    .yj-title {
+      height: px2rpx(27);
+      margin-top: px2rpx(27);
+      font-weight: bold;
+      font-size: px2rpx(18);
+      text-align: center;
+    }
+
+    .yj-input {
+      margin: px2rpx(14) px2rpx(29);
+
+      input {
+        width: px2rpx(252);
+        height: px2rpx(30);
+        border-radius: px2rpx(9);
+        font-size: px2rpx(12);
+        border: px2rpx(1) solid #BBBBBB;
+        padding: 0 px2rpx(8);
+      }
+    }
+
+    .yj-btn {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: px2rpx(40);
+      margin-top: px2rpx(21);
+      font-weight: 500;
+      font-size: px2rpx(18);
+
+      view {
+        width: px2rpx(160);
+        line-height: px2rpx(40);
+        text-align: center;
+      }
+
+      .yj-confirm {
+        color: #02BB00;
+      }
+    }
+  }
+}

@@ -12,7 +12,15 @@
       "pages": [
         "pages/respository/respository",
         "pages/coupdetails/coupdetails",
-        "pages/orderInfo/orderInfo"
+        "pages/orderInfo/orderInfo",
+        "pages/myaddress/myaddress",
+        "pages/address/address",
+        "pages/mycoupon/mycoupon",
+        "pages/packrota/packrota",
+        "pages/quote/quote",
+        "pages/money/money",
+        "pages/payment/payment",
+        "pages/regulations/regulations"
       ]
     },
     {
@@ -61,6 +69,8 @@
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-icon": "@vant/weapp/icon/index"
   }
 }

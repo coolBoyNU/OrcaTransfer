@@ -1,0 +1,8 @@
+<view class="MyAddress">
+  <van-empty description="描述文字" class="custom-image" image="../../../../static/address/icon-bg.png">
+    <navigator url="../../../package/pages/address/address">
+      <van-button>添加地址</van-button>
+    </navigator>
+  </van-empty>
+
+</view>

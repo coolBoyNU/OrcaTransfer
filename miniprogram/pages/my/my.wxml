@@ -36,12 +36,18 @@
   <!-- 地址 -->
   <view class="nav-footer">
     <van-cell-group inset>
-      <van-cell title="我的地址" is-link />
-      <van-cell title="我的优惠卷" is-link />
+      <navigator url="../../package/pages/myaddress/myaddress">
+        <van-cell title="我的地址" is-link />
+      </navigator>
+      <navigator url="../../package/pages/mycoupon/mycoupon">
+        <van-cell title=" 我的优惠卷" is-link />
+      </navigator>
       <van-cell title="活动中心" is-link />
       <van-cell title="联系客服" is-link />
       <van-cell title="转运流程" is-link />
-      <van-cell title="转运须知" is-link />
+      <navigator url="../../package/pages/regulations/regulations">
+        <van-cell title="转运须知" is-link />
+      </navigator>
       <van-cell title="关于我们" is-link />
     </van-cell-group>
 

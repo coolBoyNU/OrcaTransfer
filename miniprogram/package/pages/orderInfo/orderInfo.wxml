@@ -73,3 +73,6 @@
   </view>
 
 </view>
+<!-- 底部按钮 -->
+
+<footerbtn list="{{lists}}"></footerbtn>

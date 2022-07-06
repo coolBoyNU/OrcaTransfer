@@ -1,0 +1,71 @@
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+#address {
+  padding: px2rpx(20) 0;
+}
+
+.input-box {
+  padding: 0 px2rpx(8);
+  border-bottom: px2rpx(1) solid #BBBBBB;
+
+  //输入框
+  .van-cell {
+    padding: px2rpx(8) 0;
+
+    &::after {
+      border: none;
+    }
+
+    .van-cell__title {
+      width: px2rpx(10);
+      text-align: right;
+    }
+  }
+
+}
+
+.nav-footer {
+  padding: px2rpx(18);
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+
+    text {
+      font-size: px2rpx(14);
+      color: #101010;
+    }
+
+    .van-switch {
+      // width: px2rpx(50);
+      // height: px2rpx(30);
+    }
+  }
+
+  .footer-bottom {
+    margin-top: px2rpx(41);
+    text-align: center;
+
+    .van-button {
+      width: px2rpx(225);
+      height: px2rpx(30);
+      background-color: #E7691D;
+      border: none;
+    }
+  }
+}
+
+.nav-country {
+  margin-top: px2rpx(100);
+
+  //取消按钮//确认按钮
+  .van-picker__cancel,
+  .van-picker__confirm {
+    font-size: px2rpx(16);
+    color: #4192ff;
+  }
+
+
+}

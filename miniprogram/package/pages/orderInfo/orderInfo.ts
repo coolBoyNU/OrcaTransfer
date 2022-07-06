@@ -1,4 +1,3 @@
-import { inputProps } from 'miniprogram/miniprogram_npm/@vant/weapp/field/props'
 import { getOrderId } from '../../../utils/util'
 
 Page({
@@ -7,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    lists: { all: "联系客服", verify: "取消订单", allcor: '#4c168e', verifycor: '#e2e2e2', allfont: '', verifyfont: '#000' }, //底部按钮
+
     news: [
       { name: '新希望仓库', phone: '18688880130', add: '深圳市龙华区龙华街道工业路壹城环智中心C座2607室', icon: 'location-o', color: '#59b850', cop: 1 },
       {

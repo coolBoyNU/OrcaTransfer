@@ -1,0 +1,191 @@
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+#Money {
+  padding: px2rpx(9) px2rpx(14);
+}
+
+.nav-add {
+  display: flex;
+  width: px2rpx(347);
+  height: px2rpx(100);
+  box-shadow: 0 0 px2rpx(8) px2rpx(-4) black;
+  padding: px2rpx(15) px2rpx(14);
+  box-sizing: border-box;
+
+  .add-ic {
+    width: px2rpx(35);
+    height: px2rpx(26);
+    background-color: #ffa726;
+    padding: px2rpx(5);
+    margin-right: px2rpx(10);
+    margin-top: px2rpx(10);
+    border-radius: px2rpx(30);
+    box-sizing: border-box;
+
+    image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .add-name {
+    font-size: px2rpx(15);
+    color: #101010;
+    margin-bottom: px2rpx(3);
+
+    .name {
+      text {
+        margin: 0 px2rpx(15) 0 px2rpx(5);
+      }
+    }
+
+    .conter {
+      font-size: px2rpx(12);
+      color: #999999;
+      line-height: px2rpx(25);
+    }
+
+  }
+}
+
+.nav-info {
+  width: px2rpx(347);
+  height: px2rpx(358);
+  box-shadow: 0 0 px2rpx(8) px2rpx(-4) black;
+  padding: px2rpx(13) px2rpx(15);
+  margin: px2rpx(14) px2rpx(0);
+  box-sizing: border-box;
+
+  .info-conter {
+    display: flex;
+    justify-content: space-between;
+    font-size: px2rpx(14);
+    color: #101;
+    line-height: px2rpx(30);
+    border-bottom: px2rpx(1) solid #bbb;
+
+    .ic-coy {
+
+      image {
+        width: px2rpx(19);
+        height: px2rpx(19);
+        margin-right: px2rpx(5);
+        vertical-align: px2rpx(-3);
+      }
+    }
+
+    .ic-note {
+      font-size: px2rpx(11);
+      color: #EC0606;
+    }
+
+    //右边
+    .right-font {
+      text-align: right;
+
+      .minus {
+        text {
+          color: #EC0606;
+        }
+      }
+    }
+  }
+
+  .info-price {
+    margin-top: px2rpx(10);
+    text-align: right;
+    font-size: px2rpx(14);
+    font-weight: bold;
+    color: #101;
+
+    .y-iny {
+      font-size: px2rpx(11);
+      font-weight: 400;
+      color: #bbb;
+
+      text {
+        color: #EC0606;
+        margin-right: px2rpx(5);
+      }
+    }
+  }
+}
+
+//底部按钮
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: px2rpx(66);
+  background-color: #fff;
+  border-top: px2rpx(1) solid #bbb;
+  font-size: px2rpx(14);
+  color: #101;
+  z-index: 999;
+
+  .d-inf {
+    margin-left: px2rpx(20);
+    line-height: px2rpx(30);
+
+    .d-pr {
+      font-weight: 600;
+    }
+
+    //复选框字体
+    .van-checkbox {
+      .van-checkbox__label {
+        font-size: px2rpx(12);
+      }
+    }
+  }
+
+  .d-btn {
+    .van-button {
+      width: px2rpx(127);
+      height: px2rpx(66);
+      background-color: #274f05;
+      font-size: px2rpx(18);
+      color: #f5e4ad;
+      border: none;
+      border-radius: 0;
+    }
+
+  }
+}
+
+// 弹出框 
+.nav-box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: px2rpx(400);
+  padding: px2rpx(6);
+  z-index: -1;
+  margin-bottom: px2rpx(40);
+
+  .font {
+    text-align: left;
+    height: px2rpx(370);
+    color: #888888;
+    font-size: px2rpx(14);
+    overflow: auto;
+  }
+
+  .van-button {
+    width: px2rpx(223);
+    height: px2rpx(45);
+    background-color: #e7691d;
+    color: white;
+    font-size: px2rpx(20);
+    font-weight: 400;
+    border: none;
+    border-radius: px2rpx(30);
+    margin-top: px2rpx(8);
+  }
+
+}

@@ -1,0 +1,6 @@
+<view class="footer-btn">
+  <van-button color="{{list.allcor}}" custom-style="color:{{list.allfont}}" bindtap="btnHandler">{{list.all}} </van-button>
+  <van-button color="{{list.verifycor}}" custom-style="color:{{list.verifyfont}}" bindtap="btnver">{{list.verify}}</van-button>
+</view>
+
+<!-- { all: "联系客服", verify: "取消单号", allcor: '#4c168e', verifycor: '#e2e2e2', allfont: '', verifyfont: '#000' } -->

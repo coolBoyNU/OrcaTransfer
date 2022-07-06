@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-card": "/components/cardCoupn/cardCoupn",
+    "van-overlay": "@vant/weapp/overlay/index"
+  }
+}

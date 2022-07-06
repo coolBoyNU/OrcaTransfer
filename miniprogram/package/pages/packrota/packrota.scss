@@ -1,0 +1,56 @@
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+.nav-choose {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: px2rpx(14) px2rpx(18);
+
+  .pack-favor {
+    width: px2rpx(161);
+    height: px2rpx(91);
+    line-height: px2rpx(25);
+    border-radius: px2rpx(14);
+    font-size: px2rpx(17);
+    // font-weight: 600;
+    background-color: #0881EC;
+    margin-bottom: px2rpx(10);
+    box-shadow: 0 0 px2rpx(9) px2rpx(-3) black;
+    color: white;
+    padding: px2rpx(22) 0 0 px2rpx(16);
+    box-sizing: border-box;
+
+    view {
+      font-size: px2rpx(14);
+    }
+  }
+
+
+}
+
+.nav-schedule {
+  width: px2rpx(351);
+  // height: px2rpx(361);
+  border-radius: px2rpx(10);
+  box-shadow: 0 0 px2rpx(8) px2rpx(-3);
+  margin: 0 px2rpx(12);
+  padding: px2rpx(16) px2rpx(18);
+  box-sizing: border-box;
+  overflow: hidden;
+
+  //边框
+  .van-step--vertical:after {
+    border: none;
+  }
+
+  //图标背景
+  .van-step__circle-container .van-icon {
+    width: px2rpx(20);
+    line-height: px2rpx(20);
+    background: white;
+    text-align: center;
+    border-radius: px2rpx(50);
+  }
+}

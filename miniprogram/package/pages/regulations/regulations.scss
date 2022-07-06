@@ -1,0 +1,36 @@
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+#Regulations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: px2rpx(17) px2rpx(11);
+
+  .nav-conter {
+    font-size: px2rpx(14);
+    color: #101;
+    margin-bottom: px2rpx(38);
+
+    .w-title {
+      font-size: px2rpx(24);
+      font-weight: 600;
+    }
+
+    .w-date {
+      text-align: right;
+      color: #888;
+    }
+  }
+
+  .van-button {
+    width: px2rpx(187);
+    height: px2rpx(41);
+    background-color: #E7691D;
+    color: #fff;
+    font-size: px2rpx(18);
+    margin-bottom: px2rpx(50);
+  }
+
+}

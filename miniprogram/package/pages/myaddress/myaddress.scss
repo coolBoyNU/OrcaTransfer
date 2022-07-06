@@ -1,0 +1,20 @@
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+.van-empty {
+  .van-empty__image {
+    width: px2rpx(323);
+    height: px2rpx(323);
+  }
+
+  .van-button {
+    width: px2rpx(176);
+    height: px2rpx(36);
+    background-color: #E7691D;
+    border-radius: px2rpx(4);
+    color: white;
+    border: none;
+  }
+
+}

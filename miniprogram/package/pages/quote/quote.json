@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-switch": "@vant/weapp/switch/index",
+    "footerbtn": "../../../components/footerbtn/footerbtn",
+    "van-overlay": "@vant/weapp/overlay/index"
+  }
+}

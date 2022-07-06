@@ -9,7 +9,28 @@
       "list": [
         {
           "name": "",
-          "pathName": "packs/pages/estimation/estimation",
+          "pathName": "package/pages/packrota/packrota",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/pages/quote/quote",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/pages/money/money",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/pages/payment/payment",
           "query": "",
           "launchMode": "default",
           "scene": null

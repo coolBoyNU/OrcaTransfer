@@ -1,0 +1,36 @@
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+#PayMent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 px2rpx(39);
+}
+
+.nav-bg {
+  text-align: center;
+  font-size: px2rpx(20);
+  color: #00b700;
+  margin-top: px2rpx(100);
+  margin-bottom: px2rpx(45);
+
+  image {
+    width: px2rpx(71);
+    height: px2rpx(70);
+  }
+}
+
+.nav-regli {
+  font-size: px2rpx(14);
+  color: #101;
+  margin-bottom: px2rpx(76);
+}
+
+.van-button {
+  text-align: center;
+  width: px2rpx(189);
+  height: px2rpx(42);
+  border-radius: px2rpx(5);
+}

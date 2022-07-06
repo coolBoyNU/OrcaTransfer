@@ -1,0 +1,81 @@
+<view id="Quote">
+  <view class="nav-conter">
+    <view class="b-mixBox">
+      <view>订单号：20220509140712345678</view>
+      <view class="b-save">
+        <image src="../../../static/coupons/icon-safety.png"></image>
+        <text>保价</text>
+      </view>
+      <view class="b-input">
+        <input type="text" placeholder="自定义物品价格，请填写真实物品价格" />
+      </view>
+    </view>
+
+    <!-- 保险 -->
+    <view class="b-cont">
+      <view class="in-warn">
+        <van-icon name="warning-o" />
+        <view class="van-font">国际快递由于多国调度，存在一定比例丢失的情况！
+          如丢失包裹，购买丢失险可获得全额赔付赔付(最高5000元)!</view>
+      </view>
+
+      <view class="in-btn">
+        <view>丢失险（保价的3%）</view>
+        <van-switch checked="{{ true }}" size="20" active-color="#00de64" bind:change="onChange" />
+      </view>
+
+      <view class="in-insurance">保险费：¥ 30.00</view>
+
+    </view>
+
+    <!-- 保险 -->
+    <view class="b-cont">
+      <view class="in-warn">
+        <van-icon name="warning-o" />
+        <view class="van-font">电子产品等容易被税的高客单价产品建议购买关税保险!
+          英国关税起征点为0.01英镑!
+          综合关税=货值x增值税率+(货值+运费+货值x产品税
+          率)x20%+清关杂费。
+        </view>
+      </view>
+
+      <view class="in-btn">
+        <view>关税险（保价的2%）</view>
+        <van-switch checked="{{ true }}" size="20" active-color="#00de64" bind:change="onChange" />
+      </view>
+
+      <view class="in-insurance">保险费：¥ 20.00</view>
+
+    </view>
+
+  </view>
+  <!-- 底部按钮 -->
+  <footerbtn list="{{lists}}" bind:all='al' bind:ver="vr"></footerbtn>
+
+</view>
+
+<!-- 遮罩 -->
+<van-overlay show="{{ show }}" bind:click="onClickHide">
+  <view class="wrapper">
+    <view class="block">
+      <view class="t-title">风险告知书</view>
+
+      <view class="t-conter">
+        尊敬的客户:
+        <view class="cen-font">
+        您好，系统识别到您的订单未投保丢失保险，
+        丢件的概率为万分之三，未购买丢失保险发生丢
+        失的赔付原则为:退运费，按照实际货值赔付但不
+        超过运费价值且最高不超过100美元。请悉知。
+        </view>
+      </view>
+
+      <view class="t-btn">
+        <van-button color="#274f05" catchtap="dll">购买保险</van-button>
+        <van-button color="#4c168e" catchtap="risk">承担风险</van-button>
+      </view>
+
+
+    </view>
+  </view>
+</van-overlay>

@@ -1,0 +1,32 @@
+<view id="packRota">
+  <view class="nav-choose">
+    <view class="pack-favor">
+      全部包裹
+      <view>查看您的全部包裹</view>
+    </view>
+    <view class="pack-favor">
+      退回包裹
+      <view>退回给商家或仓库处理</view>
+    </view>
+    <view class="pack-favor">
+      异常包裹
+      <view>违禁品</view>
+    </view>
+    <view class="pack-favor">
+      入库包裹
+      <view>已入库的包裹</view>
+    </view>
+
+  </view>
+
+
+  <!-- 进度 -->
+  <view class="nav-schedule">
+    <van-steps steps="{{ steps }}" active="{{ active }}" direction="vertical" active-color="#38f">
+      <view>112qwqq</view>
+    </van-steps>
+
+  </view>
+
+
+</view>

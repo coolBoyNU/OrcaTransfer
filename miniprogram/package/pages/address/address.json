@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-switch": "@vant/weapp/switch/index",
+    "van-area": "@vant/weapp/area/index"
+  },
+  "navigationBarBackgroundColor": "#e7691d"
+}

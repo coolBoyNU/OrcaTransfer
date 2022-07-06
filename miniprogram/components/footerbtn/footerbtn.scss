@@ -1,0 +1,22 @@
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+.footer-btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: px2rpx(57);
+  background-color: firebrick;
+  text-align: center;
+
+  .van-button {
+    width: px2rpx(188);
+    height: px2rpx(57);
+    font-size: px2rpx(18);
+    color: white;
+    border: none;
+    border-radius: 0;
+  }
+
+}
