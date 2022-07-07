@@ -53,14 +53,16 @@
 
     <!-- 转运-运费 -->
     <view class="processor">
-      <view class="transhipment">
-        <view>转运须知</view>
-        <view>流程和注意事项</view>
-        <view class="zy-bottom">
-          <image class="zy-one" src="../../static/homePublic/arrowX.png"></image>
-          <image class="zy-two" src="../../static/homePublic/car.png"></image>
+      <navigator url="../../package/pages/regulations/regulations">
+        <view class="transhipment">
+          <view>转运须知</view>
+          <view>流程和注意事项</view>
+          <view class="zy-bottom">
+            <image class="zy-one" src="../../static/homePublic/arrowX.png"></image>
+            <image class="zy-two" src="../../static/homePublic/car.png"></image>
+          </view>
         </view>
-      </view>
+      </navigator>
 
       <!-- 2 -->
       <navigator url="../../packs/pages/estimation/estimation">

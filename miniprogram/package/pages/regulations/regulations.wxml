@@ -19,6 +19,6 @@
     <view class="w-date">2020-11-02 23:46:48</view>
   </view>
 
-  <van-button bindtap="allBtn">已阅读</van-button>
+  <van-button bindtap="allBtn" disabled="{{isdisabled}}">{{timer}}已阅读</van-button>
 
 </view>

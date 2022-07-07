@@ -1,8 +1,48 @@
 <view class="MyAddress">
-  <van-empty description="描述文字" class="custom-image" image="../../../../static/address/icon-bg.png">
-    <navigator url="../../../package/pages/address/address">
-      <van-button>添加地址</van-button>
-    </navigator>
-  </van-empty>
+  <!-- 没有地址时显示 -->
+  <block wx:if="{{filterList==''?true:false}}">
+    <van-empty description="描述文字" class="custom-image" image="../../../../static/address/icon-bg.png">
+      <navigator url="../../../package/pages/address/address">
+        <van-button>添加地址</van-button>
+      </navigator>
+    </van-empty>
+  </block>
 
+  <!-- 有地址时显示 -->
+  <block wx:if="{{filterList!=''?true:false}}">
+    <view class=" nav-addName">
+      <!-- 我的地址 -->
+      <block wx:for="{{filterList}}" wx:key="index">
+        <view class="box-frame">
+          <view class="d-top">
+            <view class="d-avatar"><text>{{item.head}}</text> </view>
+
+            <view class="d-info">
+              <view class="d-name">
+                {{item.name}}
+                <text>{{item.phone}}</text>
+              </view>
+              <view>{{item.add}}</view>
+            </view>
+          </view>
+
+          <view class="d-default">
+            <view>
+              <van-checkbox value="{{ item.default?true:false }}" bind:change="onChange" data-li="{{item.name}}" icon-size="15">{{item.default==1?'默认寄件地址':'设为默认寄件地址'}}</van-checkbox>
+            </view>
+            <view class="btnIcon">
+              <van-icon name="edit" />
+              <van-icon name="delete-o" />
+            </view>
+          </view>
+        </view>
+      </block>
+
+      <!-- 底部 -->
+      <view class="footer">
+
+        <van-button round bindtap="newAdd">新建地址</van-button>
+      </view>
+    </view>
+  </block>
 </view>

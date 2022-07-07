@@ -23,7 +23,7 @@
   <!-- 进度 -->
   <view class="nav-schedule">
     <van-steps steps="{{ steps }}" active="{{ active }}" direction="vertical" active-color="#38f">
-      <view>112qwqq</view>
+
     </van-steps>
 
   </view>

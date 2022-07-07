@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "van-empty": "@vant/weapp/empty/index"
+    "van-empty": "@vant/weapp/empty/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index"
   },
   "navigationBarBackgroundColor": "#e7691d",
   "navigationBarTextStyle": "black"

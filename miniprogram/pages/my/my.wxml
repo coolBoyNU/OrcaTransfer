@@ -44,7 +44,9 @@
       </navigator>
       <van-cell title="活动中心" is-link />
       <van-cell title="联系客服" is-link />
-      <van-cell title="转运流程" is-link />
+      <navigator url="../../package/pages/process/process">
+        <van-cell title="转运流程" is-link />
+      </navigator>
       <navigator url="../../package/pages/regulations/regulations">
         <van-cell title="转运须知" is-link />
       </navigator>

@@ -16,10 +16,45 @@ Page({
       },
     ],
     ditch: '',
-    inputValue: null, // 输入框
+    inputValue: [], // 输入框
     isDisabled: false, //输入框状态
     isFocus: false, //获取焦点
+    isInputShow: false,
+    inputData: {
+
+    },
   },
+  //删除
+  del(e: any) {
+    let filresult = this.data.inputValue.filter((item: any) => item.id !== e.target.dataset.rem)
+
+    this.setData({ inputValue: filresult })
+  },
+
+  //单号输入框
+  oddNum(e: any) {
+    let filresult = this.data.inputValue.map((item: any) => {
+      if (item.id == e.target.dataset.mark) {
+        item.value = e.detail.value;
+      }
+      return item
+    })
+
+    let _this = this;
+    wx.showModal({
+      title: '提示',
+      content: '这是一个模态弹窗',
+      success(res) {
+        if (res.confirm) {
+          //@ts-ignore
+          _this.setData({ inputValue: filresult })
+        }
+      }
+    })
+
+
+  },
+
 
   //复制号码
   copyPhone() {
@@ -74,11 +109,18 @@ Page({
         }
       }
     })
+    let arr: any = []
+
+    for (let i = 1; i <= res; i++) {
+      arr = [...arr, { id: i, value: '', status: false }]
+    }
+
 
     this.setData({
       // @ts-ignore//
-      inputValue: res ? res : '',
+      inputValue: arr,
       isDisabled: true,
+      isInputShow: true,
     })
   },
 
@@ -91,9 +133,15 @@ Page({
       content: '增加快递单号后，发往转运中心的快递个数+ 1。是否要继续？',
       success(res) {
         if (res.confirm) {
+          let num = 0;
+          //获取总数量加一
+          for (let i in _this.data.inputValue) {
+            num = Number(i) + 2
+          }
+          //添加一个对象进inputValue
           _this.setData({
-            // @ts-ignore
-            inputValue: ++_this.data.inputValue
+            // @ts-ignore//
+            inputValue: [..._this.data.inputValue, { id: num, value: '', status: false }],
           })
         }
       }

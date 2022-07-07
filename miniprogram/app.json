@@ -20,7 +20,9 @@
         "pages/quote/quote",
         "pages/money/money",
         "pages/payment/payment",
-        "pages/regulations/regulations"
+        "pages/regulations/regulations",
+        "pages/process/process",
+        "pages/fillAddress/fillAddress"
       ]
     },
     {
@@ -28,7 +30,8 @@
       "name": "p2",
       "pages": [
         "pages/Country/Country",
-        "pages/estimation/estimation"
+        "pages/estimation/estimation",
+        "pages/activity/activity"
       ]
     }
   ],

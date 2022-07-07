@@ -1,24 +1,26 @@
 <view id="address">
-  <view class="input-box">
-    <van-cell-group>
-      <van-field value="{{ name }}" label="Name：" placeholder="Please fill in the recipient's name" />
-      <van-field value="{{ phone }}" label="Phone：" placeholder="Please fill in the recipient's phone" />
-      <van-field value="{{ address }}" label="Address：" placeholder="Please fill in the address" />
-      <van-field value="{{ city }}" label="City：" placeholder="Please fill in the city" />
-      <van-field value="{{ postcode }}" custom-style="" label="PostCode：" placeholder="Please fill in the postcode" />
-      <van-field value="{{ country }}" label="Country：" bind:focus="btnfoc" placeholder="Please selecht a country" right-icon="arrow" />
-    </van-cell-group>
-  </view>
-  <view class="nav-footer">
-    <view class="footer-top">
-      <text>设为默认</text>
-      <van-switch checked="{{ true }}" active-color="#00e266" size="25" bind:change="onChange" />
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="input-box">
+      <van-cell-group>
+        <van-field label="Name：" name="name" placeholder="Please fill in the recipient's name" />
+        <van-field label="Phone：" name="phone" placeholder="Please fill in the recipient's phone" />
+        <van-field label="Address：" name="address" placeholder="Please fill in the address" />
+        <van-field label="City：" name="city" placeholder="Please fill in the city" />
+        <van-field label="PostCode：" name="postcode" placeholder="Please fill in the postcode" />
+        <van-field value="{{ country }}" readonly="true" name="Country" label="Country：" bind:tap="btnfoc" placeholder="Please selecht a country" right-icon="arrow" />
+      </van-cell-group>
     </view>
+    <view class="nav-footer">
+      <view class="footer-top">
+        <text>设为默认</text>
+        <switch name="switch" color="#00e266" />
+      </view>
 
-    <view class="footer-bottom">
-      <van-button>添加地址</van-button>
+      <view class="footer-bottom">
+        <van-button formType="submit">添加地址</van-button>
+      </view>
     </view>
-  </view>
+  </form>
 
   <!-- Country -->
   <block wx:if="{{isShow}}">

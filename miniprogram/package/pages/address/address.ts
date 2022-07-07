@@ -1,19 +1,39 @@
 // package/pages/address/address.ts
+
+
 import { areaList } from '@vant/area-data'; //地区插件
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     areaList,
-    isShow: false,
-    country: '',
+    isShow: false, //地址转态
+    country: '', //选择地址
+    applicationForm: {
+      name: '',
+      phone: '',
+      address: '',
+      city: '',
+      postcode: '',
+    }
   },
 
+  //获取表单所有数据
+  formSubmit(e: any) {
+
+    // this.formData(e.detail.value)
+    //返回并刷新数据
+    // wx.reLaunch({
+    //   url: '../myaddress/myaddress'
+    // })
+    wx.navigateBack()
+
+  },
+
+  //地址
   btnfoc() {
     this.setData({ isShow: true })
-
   },
 
   //确认按钮
@@ -25,16 +45,17 @@ Page({
     this.setData({ country: ls, isShow: false })
 
   },
-
+  //取消按钮
   allaehl() {
     this.setData({ isShow: false })
   },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    
   },
 
   /**
@@ -62,7 +83,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+    
   },
 
   /**

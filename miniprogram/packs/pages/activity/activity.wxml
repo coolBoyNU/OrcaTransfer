@@ -1,0 +1,7 @@
+<view id="activity">
+  <view class="nav-bg">
+    <image src="../../../static/address/icon-bg.png"></image>
+    <view>亲，暂时没有活动哦！~</view>
+  </view>
+
+</view>

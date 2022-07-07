@@ -79,7 +79,7 @@
 
 </view>
 
-<!-- 弹出框 -->
+<!-- 弹出框 --> 
 <van-action-sheet show="{{ show }}">
   <view class="nav-box">
     <view class="font">

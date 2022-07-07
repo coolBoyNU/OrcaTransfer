@@ -30,7 +30,7 @@
     </view>
     <view class="num-enter">
       <label for="num">快递个数</label>
-      <input type="number" bindblur="bindKeyInput" value="{{inputValue}}" id="num" disabled="{{isDisabled}}" focus="{{isFocus}}" placeholder="请输入（输入后弹出快递单号位置" />
+      <input type="number" bindblur="bindKeyInput" value="{{inputValue.length?inputValue.length:''}}" id="num" disabled="{{isDisabled}}" focus="{{isFocus}}" placeholder="请输入（输入后弹出快递单号位置" />
     </view>
 
     <!-- 输入内容 -->
@@ -40,11 +40,11 @@
     </view>
 
     <!-- 输入订单号 -->
-    <view class="dd-input" wx:if="{{inputValue?inputValue:''}}">
+    <view class="dd-input" wx:if="{{isInputShow}}">
       <block wx:for="{{inputValue}}" wx:key="index">
         <view class="inputBox">
-          {{index+1}}. <input type="text" placeholder="请输入快递单号" />
-          <van-icon name="delete-o" />
+          {{index+1}}. <input type="text" value="{{item.value}}" bindblur="oddNum" data-mark="{{item.id}}" placeholder="请输入快递单号" />
+          <van-icon name="delete-o" bindtap="del" data-rem="{{item.id}}" />
         </view>
       </block>
       <van-button plain type="primary" bindtap="tickets">+ 补充快递单号</van-button>

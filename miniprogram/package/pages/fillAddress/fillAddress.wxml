@@ -1,0 +1,45 @@
+<view id="Money">
+  <view class="nav-add">
+    <view class="fil-depot">
+      <van-icon name="location-o" />
+      <rich-text nodes="<h4>仓库地址</h4>"></rich-text>
+    </view>
+
+    <view class="fil-name">
+      <view class="namep">
+        <text>虎鲸仓库</text>
+        <text class="phone">1995234423424</text>
+        <text class="copy">复制</text>
+      </view>
+
+      <view class="fil-add">
+        深圳市龙华区龙华街道工业路壹城环智中心C座2607室
+      </view>
+    </view>
+  </view>
+  <!-- 2 -->
+  <view class="nav-info">
+    <view class="add-title">
+      <rich-text nodes="<h4>目标国收件信息</h4>"></rich-text>
+      <view class="add-box">
+        <view class="warn">
+          <van-icon name="warning-o" />请用英文填写
+        </view>
+        <van-button plain type="primary" bindtap="addbtn">选择地址</van-button>
+      </view>
+    </view>
+    <view class="input-box">
+      <van-cell-group>
+        <van-field value="{{ userInfo.name }}" bind:blur="unName" label="Name：" placeholder="Please fill in the recipient's name" error-message="{{errHint.n}}" />
+        <van-field value="{{ userInfo.phone }}" bind:blur="unPhone" label="Phone：" placeholder="Please fill in the recipient's phone" error-message="{{errHint.p}}" />
+        <van-field value="{{ userInfo.address }}" bind:blur="unAddress" label="Address：" placeholder="Please fill in the address" error-message="{{errHint.a}}" />
+        <van-field value="{{ userInfo.city }}" bind:blur="unCity" label="City：" placeholder="Please fill in the city" error-message="{{errHint.c}}" />
+        <van-field value="{{ userInfo.postcode }}" bind:blur="unPostCode" label="PostCode：" placeholder="Please fill in the postcode" error-message="{{errHint.po}}" />
+      </van-cell-group>
+    </view>
+  </view>
+
+  <view class="btn">
+    <van-button bindtap="NStart">立即转运</van-button>
+  </view>
+</view>

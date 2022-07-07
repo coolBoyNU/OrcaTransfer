@@ -1,0 +1,132 @@
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+#Money {
+  padding: px2rpx(33) px2rpx(13);
+}
+
+.nav-add {
+  width: px2rpx(347);
+  box-shadow: 0 0 px2rpx(8) px2rpx(-4) black;
+  padding: px2rpx(15) px2rpx(14);
+  box-sizing: border-box;
+
+  .fil-depot {
+
+    .van-icon {
+      font-size: px2rpx(20);
+      padding: px2rpx(3);
+      border-radius: px2rpx(30);
+      background-color: #6f44a4;
+      color: white;
+    }
+
+    rich-text {
+      display: inline-block;
+      margin-left: px2rpx(10);
+    }
+  }
+
+  .fil-name {
+    color: #101;
+    margin-left: px2rpx(22);
+
+    .namep {
+      font-size: px2rpx(15);
+      margin-bottom: px2rpx(9);
+
+      .phone {
+        margin-left: px2rpx(30);
+      }
+
+      .copy {
+        font-size: px2rpx(12);
+        color: #40B850;
+        margin-left: px2rpx(6);
+        text-shadow: 0 0 5px #40B850; //字体背景颜色扩散
+      }
+    }
+
+    .fil-add {
+      width: px2rpx(283);
+      font-size: px2rpx(12);
+      color: #999999;
+    }
+  }
+
+
+}
+
+.nav-info {
+  width: px2rpx(347);
+  box-shadow: 0 0 px2rpx(8) px2rpx(-4) black;
+  padding: px2rpx(13) px2rpx(5);
+  margin: px2rpx(14) px2rpx(0);
+  box-sizing: border-box;
+
+  .add-title {
+    margin: px2rpx(27) 0 0 px2rpx(56);
+
+    .add-box {
+      display: flex;
+      justify-content: space-between;
+      margin-top: px2rpx(10);
+      margin-right: px2rpx(20);
+      margin-bottom: px2rpx(15);
+
+      .warn {
+        font-size: px2rpx(12);
+        color: #E7691D;
+      }
+
+      .van-button {
+        width: px2rpx(65);
+        height: px2rpx(23);
+        font-size: px2rpx(12);
+        padding: 0;
+        background-color: #d9f1dd;
+      }
+    }
+  }
+
+  .input-box {
+    margin-bottom: px2rpx(50);
+    padding: 0 px2rpx(8);
+
+    //输入框
+    .van-cell {
+      line-height: px2rpx(25);
+      padding: px2rpx(8) 0;
+
+      &::after {
+        border: none;
+      }
+
+      .van-cell__title {
+        width: px2rpx(10);
+        text-align: right;
+        color: black;
+      }
+    }
+
+  }
+
+
+}
+
+.btn {
+  width: 100%;
+  margin-top: px2rpx(50);
+  text-align: center;
+
+  .van-button {
+    width: px2rpx(162);
+    height: px2rpx(38);
+    background-color: #4c168e;
+    font-size: px2rpx(14);
+    border-radius: px2rpx(4);
+    color: white;
+
+  }
+}

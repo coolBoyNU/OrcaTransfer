@@ -2,6 +2,7 @@
   @return $px*2+rpx;
 }
 
+// 没有地址时显示
 .van-empty {
   .van-empty__image {
     width: px2rpx(323);
@@ -17,4 +18,102 @@
     border: none;
   }
 
+}
+
+// 有地址时显示
+.nav-addName {
+  padding: px2rpx(9);
+
+  .box-frame {
+
+    .d-top {
+      display: flex;
+      align-items: center;
+
+      .d-avatar {
+        width: px2rpx(60);
+
+        text {
+          width: px2rpx(32);
+          height: px2rpx(32);
+          background-color: #ffa726;
+          padding: px2rpx(6) px2rpx(9);
+          font-size: px2rpx(14);
+          color: #fff;
+          border-radius: px2rpx(60);
+        }
+      }
+
+      .d-info {
+        font-size: px2rpx(12);
+        color: #999;
+
+
+        .d-name {
+          font-size: px2rpx(15);
+          color: #101;
+          margin-bottom: px2rpx(5);
+
+          text {
+            margin-left: px2rpx(30);
+          }
+        }
+      }
+    }
+
+    .d-default {
+      display: flex;
+      justify-content: space-between;
+      margin-top: px2rpx(15);
+
+      //复选框
+      .van-checkbox {
+        font-size: px2rpx(14);
+
+        //圆圈
+        .van-checkbox__icon {
+          border: px2rpx(1) solid #e7691d;
+        }
+
+        //选中颜色
+        .van-checkbox__icon--checked {
+          color: #e7691d;
+          background-color: white;
+        }
+
+        //字体
+        .van-checkbox__label {
+          color: #e7691d;
+          margin-left: px2rpx(-5);
+        }
+      }
+
+      .btnIcon {
+        .van-icon {
+          font-size: px2rpx(20);
+          color: #999999;
+          margin: 0 px2rpx(5);
+        }
+      }
+
+    }
+  }
+
+  //底部按钮
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: px2rpx(20);
+
+    .van-button {
+      width: px2rpx(355);
+      height: px2rpx(40);
+      background-color: #e7691d;
+      color: white;
+      font-size: px2rpx(14);
+    }
+  }
 }

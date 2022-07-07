@@ -1,42 +1,21 @@
-// package/pages/regulations/regulations.ts
+// package/pages/process/process.ts
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    timer: 5,
-    isdisabled: true,
+
   },
-
-  timeDate() {
-    let stop: any = null;
-    stop = setInterval(() => {
-      this.setData({
-        timer: --this.data.timer
-      });
-      if (this.data.timer <= 0) {
-        //@ts-ignore
-        this.setData({ timer: '', isdisabled: false })
-        clearInterval(stop)
-      }
-    }, 1000)
-  },
-
-
-  //已阅读
   allBtn() {
-    if (this.data.isdisabled) return
-    wx.navigateTo({
-      url: "../orderInfo/orderInfo"
-    })
+    wx.navigateBack()
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    this.timeDate()
+
   },
 
   /**

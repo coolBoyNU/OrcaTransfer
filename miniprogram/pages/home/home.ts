@@ -40,7 +40,7 @@ Page({
   //遮罩层下一步
   affirm() {
     wx.navigateTo({
-      url: '../../package/pages/orderInfo/orderInfo?TD=' + this.data.DT
+      url: '../../package/pages/fillAddress/fillAddress?TD=' + this.data.DT
     })
     this.setData({
       isShow: false
