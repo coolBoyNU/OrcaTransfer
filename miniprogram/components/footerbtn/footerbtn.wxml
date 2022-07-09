@@ -1,6 +1,13 @@
 <view class="footer-btn">
-  <van-button color="{{list.allcor}}" custom-style="color:{{list.allfont}}" bindtap="btnHandler">{{list.all}} </van-button>
-  <van-button color="{{list.verifycor}}" custom-style="color:{{list.verifyfont}}" bindtap="btnver">{{list.verify}}</van-button>
+  <block wx:if="{{!list.stata}}">
+    <van-button color="{{list.allcor}}" data-dler="{{list.all}}" custom-style="color:{{list.allfont}}" bindtap="btnHandler">{{list.all}} </van-button>
+    <van-button color="{{list.verifycor}}" data-ver="{{list.verify}}" custom-style="color:{{list.verifyfont}}" bindtap="btnver">{{list.verify}}</van-button>
+  </block>
+  <view class="fullBtn" wx:else>
+    <van-button color="{{list.allcor}}" data-ver="{{list.all}}" custom-style="color:{{list.verifyfont}}" bindtap="btnHandler">{{list.all}}</van-button>
+  </view>
 </view>
 
-<!-- { all: "联系客服", verify: "取消单号", allcor: '#4c168e', verifycor: '#e2e2e2', allfont: '', verifyfont: '#000' } -->
+<!-- {stata: true, all: "联系客服", verify: "取消单号", allcor: '#4c168e', verifycor: '#e2e2e2', allfont: '', verifyfont: '#000' } -->
+<!-- stata为假时显示两个按钮，
+stata为真时显示一个按钮 -->

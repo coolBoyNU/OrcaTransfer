@@ -32,7 +32,7 @@
         <view>附加费</view>
         <view>丢失险</view>
         <view>关税险</view>
-        <view class="ic-coy">
+        <view class="ic-coy" bindtap="onSale">
           <image src="../../../static/address/icon-coy.png"></image>
           优惠券
         </view>
@@ -47,20 +47,20 @@
         <view>中国 - 美国</view>
         <view>普通货物</view>
         <view>普通货物</view>
-        <view>￥138.00</view>
-        <view>￥38.00</view>
-        <view>￥0.00</view>
-        <view>￥28.00</view>
-        <view class="minus">
-          <text>-￥8</text>
+        <view>￥{{toprice.transfer}}.00</view>
+        <view>￥{{toprice.attach}}.00</view>
+        <view>￥{{toprice.lose}}</view>
+        <view>￥{{toprice.tariffs}}</view>
+        <view class="minus" bindtap="onSale">
+          <text>-¥{{toprice.calVal}}</text>
           <van-icon name="arrow" />
         </view>
       </view>
     </view>
 
     <view class="info-price">
-      <text class="y-iny">已优惠 <text>￥8</text>小计</text>
-      ￥28.00
+      <text class="y-iny">已优惠 <text>¥{{toprice.calVal}}</text>小计</text>
+      ￥{{selnum}}
     </view>
   </view>
 
@@ -69,19 +69,19 @@
 <!-- 底部 -->
 <view id="footer">
   <view class="d-inf">
-    <view class="d-pr">订单总金额：￥138.00</view>
+    <view class="d-pr">订单总金额：￥{{selnum}}</view>
     <van-checkbox value="{{ checked }}" icon-size="24rpx" bind:change="onChange">阅读便同意《电子运单契约条款》</van-checkbox>
   </view>
 
   <view class="d-btn">
-    <van-button bindtap="Pay">立即支付</van-button>
+    <van-button bindtap="Pay" disabled="{{disStatus}}">立即支付</van-button>
   </view>
 
 </view>
 
-<!-- 弹出框 --> 
+<!-- 弹出框 -->
 <van-action-sheet show="{{ show }}">
-  <view class="nav-box">
+  <view class="nav-box" style="margin-bottom:{{windowH}}px">
     <view class="font">
       <view>转运协议</view>
       您使用霆宇国际网系统服务或提交运单，将货物交付给霆宇国际网仓库，就表示您或者您所代表的货物的利益人，接受霆宇国际网的运输条款及条件，无论您是否已经提交或将要提交运单。您口头或书面的指示如果与霆宇国际网的提交条款发生冲突，我们将不受您指示的约束。
@@ -132,4 +132,37 @@
   </view>
 </van-action-sheet>
 
+<!-- 提示框 -->
 <van-dialog id="van-dialog" />
+
+<!-- 优惠卷弹框 -->
+<van-popup show="{{ getvu }}" round closeable z-index="999" position="bottom" bind:close="SaleC">
+  <view class="nav-yo-box">
+
+    <view class="y-title"><text>选择优惠卷</text></view>
+    <!-- 卷 -->
+    <van-radio-group value="{{ radio }}" bind:change="elected">
+      <view class="y-conter">
+        <block wx:for="{{saleData}}" wx:key="index">
+          <view class="max-conter">
+            <view class="mix-left">
+              <view class="m-top">{{item.title}}</view>
+              <view>{{item.int}}</view>
+            </view>
+
+            <view class="mix-right">
+              <text>-¥ {{item.price}}</text>
+              <van-radio name="{{item.id}}"></van-radio>
+            </view>
+          </view>
+        </block>
+      </view>
+    </van-radio-group>
+    <!-- 按钮 -->
+    <view class="salc">
+      <button class="addBtn">添加奖学券</button>
+      <button class="useBtn" bindtap="onfix">确认使用</button>
+    </view>
+
+  </view>
+</van-popup>

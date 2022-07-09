@@ -1,35 +1,11 @@
-// package/pages/payment/payment.ts
+// packs/pages/service/service.ts
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    counNum: 5,
-  },
 
-  //完成
-  carry() {
-    wx.reLaunch({
-      url: '../../../pages/info/info'
-    })
-  },
-
-  //进入后倒计时退出
-  countZero() {
-    let status: any = null;
-    let num = 5;
-    status = setInterval(() => {
-      num--
-      if (num <= 0) {
-        clearTimeout(status)
-        wx.reLaunch({
-          url: '../../../pages/info/info'
-        })
-        return;
-      }
-      this.setData({ counNum: num })
-    }, 1000)
   },
 
   /**
@@ -50,7 +26,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.countZero() //倒计时
 
   },
 

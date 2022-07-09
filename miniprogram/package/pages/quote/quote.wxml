@@ -7,7 +7,7 @@
         <text>保价</text>
       </view>
       <view class="b-input">
-        <input type="text" placeholder="自定义物品价格，请填写真实物品价格" />
+        <input type="text" bindblur="inputVal" placeholder="自定义物品价格，请填写真实物品价格" />
       </view>
     </view>
 
@@ -21,10 +21,10 @@
 
       <view class="in-btn">
         <view>丢失险（保价的3%）</view>
-        <van-switch checked="{{ true }}" size="20" active-color="#00de64" bind:change="onChange" />
+        <van-switch checked="{{ isShow1 }}" size="20" active-color="#00de64" bind:change="onChange1" />
       </view>
 
-      <view class="in-insurance">保险费：¥ 30.00</view>
+      <view class="in-insurance">保险费：¥ {{insure1}}</view>
 
     </view>
 
@@ -41,10 +41,10 @@
 
       <view class="in-btn">
         <view>关税险（保价的2%）</view>
-        <van-switch checked="{{ true }}" size="20" active-color="#00de64" bind:change="onChange" />
+        <van-switch checked="{{ isShow2 }}" size="20" active-color="#00de64" bind:change="onChange2" />
       </view>
 
-      <view class="in-insurance">保险费：¥ 20.00</view>
+      <view class="in-insurance">保险费：¥ {{insure2}}</view>
 
     </view>
 
@@ -63,10 +63,10 @@
       <view class="t-conter">
         尊敬的客户:
         <view class="cen-font">
-        您好，系统识别到您的订单未投保丢失保险，
-        丢件的概率为万分之三，未购买丢失保险发生丢
-        失的赔付原则为:退运费，按照实际货值赔付但不
-        超过运费价值且最高不超过100美元。请悉知。
+          您好，系统识别到您的订单未投保丢失保险，
+          丢件的概率为万分之三，未购买丢失保险发生丢
+          失的赔付原则为:退运费，按照实际货值赔付但不
+          超过运费价值且最高不超过100美元。请悉知。
         </view>
       </view>
 

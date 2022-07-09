@@ -12,23 +12,27 @@
     position: relative;
     height: 700rpx;
     background-color: #4E148C;
-    border-radius: 0 0 50% 50%;
+    border-radius: 0 0 40% 40%;
 
-    swiper {
+    .swiper-box {
       width: 100%;
       background-color: #4E148C;
-      padding: 10rpx;
+      padding: 50rpx 10rpx 10rpx 10rpx;
+      box-sizing: border-box;
 
-      swiper-item {
-        border-radius: 12rpx;
-        overflow: hidden;
+      swiper {
+        swiper-item {
+          border-radius: 12rpx;
+          overflow: hidden;
 
-        image {
-          width: 97.5%;
-          height: 100%;
+          image {
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }
+
 
     .nav-content {
       display: flex;
@@ -97,7 +101,6 @@
       line-height: px2rpx(20);
       border-radius: px2rpx(4);
       background-color: #fff;
-      padding: 0 px2rpx(27);
       box-sizing: border-box;
 
       .wra-title {
@@ -112,6 +115,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        padding: 0 px2rpx(27);
 
         .van-tus {
           width: px2rpx(114);
@@ -136,9 +140,10 @@
         justify-content: space-between;
 
         .van-button {
-          width: px2rpx(110);
+          width: px2rpx(155);
           height: px2rpx(48);
           border: none;
+          border-radius: 0;
           font-weight: bold;
           font-size: px2rpx(16);
         }
@@ -149,7 +154,7 @@
 
 
   .nav-process {
-    margin-top: 40rpx;
+    margin-top: 80rpx;
     padding: 25rpx;
 
     .service {
@@ -195,7 +200,7 @@
     .processor {
       display: flex;
       justify-content: space-between;
-      margin-top: 20rpx;
+      margin-top: 40rpx;
 
       .transhipment {
         width: 324rpx;

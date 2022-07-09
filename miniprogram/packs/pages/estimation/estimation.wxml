@@ -9,10 +9,10 @@
 
     <!-- 1 -->
     <view class="yf-way">
-      <view class="yf-left-way">
-        转运渠道 <rich-text></rich-text>普通货物
+      <view class="yf-left-way" bindtap="normal">
+        转运渠道 <rich-text></rich-text>{{DT}}
       </view>
-      <view class="yf-left-way yf-right">
+      <view class="yf-left-way yf-right" bindtap="weightBtn">
         预估重量<rich-text></rich-text>请输入重量
       </view>
     </view>
@@ -23,7 +23,52 @@
     <!-- 3 -->
     <view class="jg-price">
       预估运费（实际结果以订单为准）
-      <view>¥ 0.00</view>
+      <view>¥ {{cost}}.00</view>
     </view>
   </view>
 </view>
+
+
+<!-- 遮罩层 转运渠道 -->
+<van-overlay show="{{ isShow }}">
+  <view class="wrapper">
+    <view class="block" catch:tap="noop">
+      <view class="wra-title">
+        <text>预选渠道</text>
+      </view>
+      <view class="wra-center">
+        <block wx:for="{{channel}}" wx:key="index">
+          <view class="van-tus {{ins===index?'selected':''}}" bindtap="isStatus" data-ins="{{index}}" data-DT="{{item.title}}">{{item.title}}</view>
+        </block>
+      </view>
+      <view class="wra-footer">
+        <van-button plain catchtap="iscll">取消</van-button>
+        <van-button plain type="primary" catchtap="affirm">确定</van-button>
+      </view>
+    </view>
+  </view>
+</van-overlay>
+
+<!-- 遮罩层 预估重量 -->
+<van-overlay show="{{ isweight }}">
+  <view class="wrapper">
+    <view class="block" catch:tap="noop">
+      <form catchsubmit="formSubmit" catchreset="formReset">
+        <view class="wra-title">
+          <text>预估重量</text>
+        </view>
+        <view class="wra-center">
+          <view class="inputv">
+            <view class="inputTit">{{DT}}</view>
+            <input type="number" placeholder="输入重量" name="num" /><text>kg</text>
+
+          </view>
+        </view>
+        <view class="wra-footer">
+          <van-button plain catchtap="iscll">取消</van-button>
+          <van-button plain type="primary" formType="submit">确定</van-button>
+        </view>
+      </form>
+    </view>
+  </view>
+</van-overlay>

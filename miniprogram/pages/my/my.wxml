@@ -42,15 +42,21 @@
       <navigator url="../../package/pages/mycoupon/mycoupon">
         <van-cell title=" 我的优惠卷" is-link />
       </navigator>
-      <van-cell title="活动中心" is-link />
-      <van-cell title="联系客服" is-link />
+      <navigator url="../../packs/pages/activity/activity">
+        <van-cell title="活动中心" is-link />
+      </navigator>
+      <navigator url="../../packs/pages/service/service">
+        <van-cell title="联系客服" is-link />
+      </navigator>
       <navigator url="../../package/pages/process/process">
         <van-cell title="转运流程" is-link />
       </navigator>
       <navigator url="../../package/pages/regulations/regulations">
         <van-cell title="转运须知" is-link />
       </navigator>
-      <van-cell title="关于我们" is-link />
+      <navigator url="../../packs/pages/aboutus/aboutus">
+        <van-cell title="关于我们" is-link />
+      </navigator>
     </van-cell-group>
 
   </view>

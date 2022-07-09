@@ -1,13 +1,15 @@
 <view id="Home">
   <view class="header-bg">
-    <swiper indicator-dots circular autoplay interval="3000">
-      <swiper-item>
-        <image src="../../static/swiper/tu1.png" mode="widthFix"></image>
-      </swiper-item>
-      <swiper-item>
-        <image src="../../static/swiper/tu2.png" mode="widthFix"></image>
-      </swiper-item>
-    </swiper>
+    <view class="swiper-box">
+      <swiper indicator-dots circular autoplay interval="3000" indicator-active-color="#dddddd">
+        <swiper-item>
+          <image src="../../static/swiper/tu1.png" mode="widthFix"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="../../static/swiper/tu2.png" mode="widthFix"></image>
+        </swiper-item>
+      </swiper>
+    </view>
     <view class="nav-content">
       <view class="place">
         <text>中国</text>

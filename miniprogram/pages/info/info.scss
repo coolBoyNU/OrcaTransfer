@@ -1,1 +1,27 @@
-/* pages/info/info.wxss */
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+.van-tabs {
+
+  .van-tabs__wrap {
+
+    .van-tabs__nav {
+
+      .van-tabs__line {
+        background-color: #4c168e;
+      }
+
+      .van-tab--active {
+        color: #fff;
+        background-color: #4c168e;
+      }
+
+      .van-tab {
+        line-height: px2rpx(32);
+      }
+    }
+
+  }
+
+}

@@ -2,7 +2,9 @@
   "usingComponents": {
     "van-icon": "@vant/weapp/icon/index",
     "van-field": "@vant/weapp/field/index",
-    "footerbtn": "../../../components/footerbtn/footerbtn"
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "footerbtn": "../../../components/footerbtn/footerbtn",
+    "billBox": "../../../components/infoParcelBox/infoParcelBox"
   },
   "navigationBarTitleText": "订单详情"
 }

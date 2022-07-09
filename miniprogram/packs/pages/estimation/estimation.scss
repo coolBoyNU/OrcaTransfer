@@ -77,3 +77,113 @@
     box-sizing: border-box;
   }
 }
+
+
+//遮罩
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .block {
+    position: relative;
+    width: px2rpx(310);
+    height: px2rpx(285);
+    line-height: px2rpx(20);
+    border-radius: px2rpx(4);
+    background-color: #fff;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    .wra-title {
+      padding: px2rpx(17) 0;
+      text-align: center;
+      font-size: px2rpx(18);
+      font-weight: bold;
+      letter-spacing: px2rpx(2);
+    }
+
+    //内容框
+    .wra-center {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 px2rpx(27);
+
+      //转运渠道
+      .van-tus {
+        width: px2rpx(114);
+        line-height: px2rpx(48);
+        border-radius: px2rpx(7);
+        text-align: center;
+        border: px2rpx(1) solid #bbb;
+        color: #4C168E;
+        font-size: px2rpx(16);
+        margin-bottom: px2rpx(11);
+      }
+
+      .selected {
+        background-color: #4C168E;
+        color: white;
+        border: px2rpx(1) solid #4C168E;
+      }
+
+      //预估重量
+      .inputv {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: px2rpx(160);
+        border: px2rpx(1) solid #4e148c;
+        text-align: center;
+        border-radius: px2rpx(4);
+
+        .inputTit {
+          margin-bottom: px2rpx(10);
+          font-weight: 600;
+          color: #266f42;
+          letter-spacing: px2rpx(2)
+        }
+
+        input {
+          width: px2rpx(200);
+          height: px2rpx(40);
+          border: px2rpx(1) solid #bbb;
+          border-radius: px2rpx(4);
+          margin-bottom: px2rpx(10);
+        }
+
+        text {
+          position: absolute;
+          top: 50%;
+          right: px2rpx(5);
+          font-size: px2rpx(16);
+          font-family: '宋体';
+          color: #888;
+        }
+      }
+
+
+    }
+
+    .wra-footer {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+
+      .van-button {
+        width: px2rpx(155);
+        height: px2rpx(48);
+        border: none;
+        font-weight: bold;
+        font-size: px2rpx(16);
+        border-radius: 0;
+      }
+    }
+  }
+}

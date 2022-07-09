@@ -1,13 +1,14 @@
 import { getOrderId } from '../../../utils/util'
 
-Page({
 
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-    lists: { all: "联系客服", verify: "取消订单", allcor: '#4c168e', verifycor: '#e2e2e2', allfont: '', verifyfont: '#000' }, //底部按钮
-
+    billParcel: [{ title: '包裹一' }, { title: '包裹二' }, { title: '包裹三' }], //账单盒子数据
+    lists: { stata: false, all: "联系客服", verify: "取消订单", allcor: '#4c168e', verifycor: '#e2e2e2', allfont: '', verifyfont: '#000' }, //底部按钮
+    order: [{ numSize: '298267132913123213' }],
     news: [
       { name: '新希望仓库', phone: '18688880130', add: '深圳市龙华区龙华街道工业路壹城环智中心C座2607室', icon: 'location-o', color: '#59b850', cop: 1 },
       {
@@ -15,19 +16,20 @@ Page({
         color: '#4c168e'
       },
     ],
-    ditch: '',
-    inputValue: [], // 输入框
-    isDisabled: false, //输入框状态
-    isFocus: false, //获取焦点
-    isInputShow: false,
-    inputData: {
-
-    },
+    ditch: '普通货物',
+    inputValue: [
+      { id: 1, value: '34e21451432142', status: true, bllSt: 2 },
+      { id: 2, value: 'AA344343432232', status: true, bllSt: 2 },
+      { id: 3, value: 'fdsfdsf3234324', status: true, bllSt: 2 },
+    ], // 输入框
+    isDisabled: false, //快递个数输入框状态
+    isFocus: false, //快递个数获取焦点
+    isInputShow: false, //订单输入框是否显示
   },
   //删除
   del(e: any) {
-    let filresult = this.data.inputValue.filter((item: any) => item.id !== e.target.dataset.rem)
-
+    if (this.data.inputValue.length <= 1) return wx.$showMsg('最后一单不能删除');
+    let filresult = this.data.inputValue.filter((item: any) => item.id !== e.target.dataset.rem);
     this.setData({ inputValue: filresult })
   },
 
@@ -39,20 +41,30 @@ Page({
       }
       return item
     })
-
+    //输入框为空时return出去
+    if (!e.detail.value) return
     let _this = this;
     wx.showModal({
-      title: '提示',
-      content: '这是一个模态弹窗',
+      title: '请确认快递单号是否无误',
+      content: '请确认快递单号【test12346】是否无误一旦提交，不可修改',
       success(res) {
         if (res.confirm) {
+          //确认后禁用按钮
+          _this.data.inputValue.forEach(item => {
+            //@ts-ignore
+            if (item.id == e.target.dataset.mark) {
+              //@ts-ignore
+              item.status = true;
+              item.bllSt = 1;
+            }
+          })
+          _this.footBtn()
+          wx.setStorageSync('list', filresult)
           //@ts-ignore
           _this.setData({ inputValue: filresult })
         }
       }
     })
-
-
   },
 
 
@@ -83,11 +95,28 @@ Page({
 
   //复制订单号
   xxCopy() {
-    console.log(111);
+    let num = 0;
+    this.data.order.forEach(item => {
+      //@ts-ignore
+      num = item.numSize
 
+    })
+
+    //一键获取剪贴板内容
+    wx.getClipboardData({
+      success() {
+        wx.setClipboardData({
+          //@ts-ignore
+          data: num,
+          success() {
+            wx.$showMsg('复制成功')
+          }
+        })
+      }
+    })
   },
 
-  //输入框
+  //快递个数输入框
   bindKeyInput(e: any) {
     let reg = /\d/g
     if (!reg.test(e.detail.value)) return wx.$showMsg('请输入数字')
@@ -104,7 +133,8 @@ Page({
         } else if (res.cancel) {
           _this.setData({
             isFocus: true,
-            inputValue: null,
+            //@ts-ignore
+            inputValue: [],
           })
         }
       }
@@ -112,7 +142,7 @@ Page({
     let arr: any = []
 
     for (let i = 1; i <= res; i++) {
-      arr = [...arr, { id: i, value: '', status: false }]
+      arr = [...arr, { id: i, value: '', status: false, bllSt: 0 }]
     }
 
 
@@ -133,15 +163,13 @@ Page({
       content: '增加快递单号后，发往转运中心的快递个数+ 1。是否要继续？',
       success(res) {
         if (res.confirm) {
-          let num = 0;
-          //获取总数量加一
-          for (let i in _this.data.inputValue) {
-            num = Number(i) + 2
-          }
+          //时间戳
+          let med = Date.now()
+
           //添加一个对象进inputValue
           _this.setData({
             // @ts-ignore//
-            inputValue: [..._this.data.inputValue, { id: num, value: '', status: false }],
+            inputValue: [..._this.data.inputValue, { id: med, value: '', status: false, bllSt: 0 }],
           })
         }
       }
@@ -149,22 +177,113 @@ Page({
 
   },
 
+  //取消订单-确认打包
+  callOff(val: any) {
+    let _this = this;
+    if (val.detail == '取消订单') {
+      wx.showModal({
+        title: '是否取消订单',
+        content: '取消订单后，订单将不能进行后续操作是否要继续？',
+        success(res) {
+          if (res.confirm) {
+            wx.setStorageSync('list', '');
+            _this.setData({ inputValue: [] });
+            wx.reLaunch({ url: '../../../pages/home/home' })
+          }
+        }
+      });
+      return;
+    }
+    if (val.detail == '确认打包') {
+      wx.showModal({
+        title: '是否确认打包所有的快递包裹',
+        content: '确认后，订单进入捡货状态，快递包裹将会进行打包称重，是否要继续？',
+        success(res) {
+          if (res.confirm) {
+            wx.reLaunch({ url: '../../../pages/info/info' })
+          }
+        }
+      });
+      return;
+    }
+
+  },
+
+  //联系客服
+  Service() {
+    wx.navigateTo({ url: '../../../packs/pages/service/service' })
+  },
+
+  //判断底部按钮状态显示
+  footBtn() {
+    //只有有一个为真就返回true
+    const rxbool = this.data.inputValue.some(item => item.bllSt != 0)
+    const rxTrue = this.data.inputValue.every(item => item.bllSt == 2)
+
+    if (rxbool) {
+      //@ts-ignore
+      let newlists = this.data.lists = {
+        stata: false,
+        all: '联系客服',
+        verify: '确认打包',
+        allcor: '#e7691d',
+        verifycor: '#274f05',
+      }
+      this.setData({
+        //@ts-ignore
+        lists: newlists
+      })
+    }
+    //所有为真就显示通栏联系按钮
+    if (rxTrue) {
+      //@ts-ignore
+      let newlists = this.data.lists = {
+        stata: true,
+        all: '联系客服',
+        allcor: '#4c168e',
+      }
+      this.setData({
+        //@ts-ignore
+        lists: newlists
+      })
+      return
+    }
+
+  },
+
+  //获取本地保存的单号数据
+  synlist() {
+    let list = wx.getStorageSync('list')
+    if (list) {
+      this.setData({ inputValue: list, isInputShow: true, isDisabled: true })
+      return
+    }
+  },
+
+  //加载时查看对象是否为真，为真就显示地址输入框
+  inputLoading() {
+    if (this.data.inputValue) {
+      this.setData({ isInputShow: true })
+    }
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(optlons: any) {
-    this.setData({
-      ditch: optlons.TD
-    })
+  onLoad() {
+    //加载时查看对象是否为真，为真就显示地址输入框
+    this.inputLoading()
     console.log('时间戳', getOrderId());
 
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
+    this.footBtn()
 
   },
 
@@ -172,6 +291,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    //获取本地保存的单号数据
+    this.synlist()
 
   },
 

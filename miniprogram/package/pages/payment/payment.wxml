@@ -4,6 +4,6 @@
     <view>支付成功</view>
   </view>
   <view class="nav-regli">橙子会在24小时内为您发货，并推送信息给您，
-    请您耐心等待，3秒钟后为您跳转</view>
-  <van-button plain type="primary">完成</van-button>
+    请您耐心等待，{{counNum}}秒钟后为您跳转</view>
+  <van-button plain type="primary" bindtap="carry">完成</van-button>
 </view>

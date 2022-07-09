@@ -22,12 +22,12 @@ Component({
    */
   methods: {
     //取消按钮
-    btnHandler() {
-      this.triggerEvent('all')
+    btnHandler(e: any) {
+      this.triggerEvent('all', e.target.dataset.dler)
     },
     //确认
-    btnver() {
-      this.triggerEvent('ver')
+    btnver(e: any) {
+      this.triggerEvent('ver', e.target.dataset.ver)
     }
   }
 })

@@ -4,6 +4,7 @@
 
 #orderInfo {
   padding: px2rpx(20) px2rpx(14);
+  margin-bottom: px2rpx(50);
 }
 
 .nav-information {
@@ -63,6 +64,85 @@
   }
 }
 
+//打包后包裹
+.nav-parcel-box {
+  width: px2rpx(347);
+  box-shadow: 0 0 px2rpx(8) px2rpx(-3) black;
+  padding: px2rpx(23) px2rpx(14);
+  box-sizing: border-box;
+  margin-top: px2rpx(14);
+
+  .info-minbox {
+    line-height: px2rpx(25);
+    font-size: px2rpx(14);
+    font-weight: 400;
+    color: #101;
+
+    .i-note {
+      color: #e7691d;
+    }
+
+    .wim_img {
+      display: flex;
+      justify-content: space-between;
+      height: px2rpx(82);
+
+      image {
+        width: px2rpx(93);
+        height: px2rpx(82);
+      }
+    }
+  }
+
+  .in-detail {
+    margin-top: px2rpx(20);
+
+    .i-title {
+      font-size: px2rpx(14);
+      color: #101;
+    }
+
+    // 账单盒子
+    .i-box {
+      display: flex;
+      width: px2rpx(319);
+      height: px2rpx(120);
+      border: px2rpx(1) solid #bbb;
+      border-radius: px2rpx(4);
+      padding: px2rpx(14) px2rpx(10);
+      margin: px2rpx(14) 0;
+      box-sizing: border-box;
+
+      .i-left {
+        width: px2rpx(96);
+        height: px2rpx(93);
+        margin-right: px2rpx(13);
+        border-radius: px2rpx(2);
+        overflow: hidden;
+
+        .lf-img {
+          width: 100%;
+          height: 100%;
+        }
+
+      }
+
+      .i-right {
+        font-size: px2rpx(11);
+        color: #888;
+
+        .rig-tn {
+          font-size: px2rpx(14);
+          color: #101;
+          margin-bottom: px2rpx(2);
+        }
+      }
+    }
+  }
+}
+
+
+//快递个数 
 .nav-number {
   width: px2rpx(347);
   margin-top: px2rpx(30);
@@ -142,6 +222,12 @@
       position: relative;
       margin-bottom: px2rpx(10);
 
+      .input-sub {
+        width: px2rpx(30);
+        text-align: right;
+        margin-left: px2rpx(-5);
+      }
+
       input {
         width: px2rpx(252);
         height: px2rpx(30);
@@ -155,20 +241,38 @@
       .van-icon {
         position: absolute;
         right: px2rpx(6);
+        font-size: px2rpx(16);
+        color: #888;
+      }
+
+      //状态
+      .bll-wait {
+        position: absolute;
+        right: px2rpx(6);
+        background-color: #b39acd;
+        color: #2b2b2b;
+        font-size: px2rpx(10);
+        border-radius: px2rpx(3);
+      }
+
+      .bll-storage {
+        background-color: #ffdfc4;
+      }
+
+    }
+
+    .repairone {
+      text-align: right;
+
+      //添加按钮
+      .van-button {
+        width: px2rpx(111);
+        height: px2rpx(26);
+        font-size: px2rpx(10);
+        border-radius: px2rpx(12);
       }
     }
 
-    //添加按钮
-    .van-button {
-      position: relative;
-      top: 0;
-      left: px2rpx(160);
-      width: px2rpx(111);
-      height: px2rpx(26);
-      font-size: px2rpx(10);
-      border-radius: px2rpx(12);
-
-    }
   }
 }
 

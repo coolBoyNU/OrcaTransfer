@@ -65,6 +65,7 @@
     color: #101;
     line-height: px2rpx(30);
     border-bottom: px2rpx(1) solid #bbb;
+    padding-bottom: px2rpx(30);
 
     .ic-coy {
 
@@ -77,6 +78,7 @@
     }
 
     .ic-note {
+      position: absolute;
       font-size: px2rpx(11);
       color: #EC0606;
     }
@@ -163,14 +165,13 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  height: px2rpx(400);
   padding: px2rpx(6);
   z-index: -1;
-  margin-bottom: px2rpx(40);
+
 
   .font {
     text-align: left;
-    height: px2rpx(370);
+    height: px2rpx(350);
     color: #888888;
     font-size: px2rpx(14);
     overflow: auto;
@@ -188,4 +189,87 @@
     margin-top: px2rpx(8);
   }
 
+}
+
+
+//优惠卷
+
+.nav-yo-box {
+  padding: px2rpx(20);
+
+  .y-title {
+    font-size: px2rpx(20);
+    color: #101;
+    font-weight: bold;
+    margin-bottom: px2rpx(21);
+    text-align: center;
+  }
+
+  .y-conter {
+    height: px2rpx(200);
+    overflow: auto;
+
+
+    .max-conter {
+      display: flex;
+      justify-content: space-between;
+      margin: px2rpx(20) 0;
+
+      .mix-left {
+        font-size: px2rpx(12);
+        color: #888;
+
+        .m-top {
+          font-size: px2rpx(16);
+          color: #101;
+          margin-bottom: px2rpx(5);
+        }
+
+      }
+
+      .mix-right {
+        display: flex;
+        align-items: center;
+        font-size: px2rpx(12);
+        color: #F65E2F;
+
+        text {
+          margin-right: px2rpx(10);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  //按钮
+  .salc {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: px2rpx(10);
+    margin-top: px2rpx(10);
+
+    button {
+      margin: 0;
+    }
+
+    .addBtn {
+      width: px2rpx(140);
+      height: px2rpx(36);
+      font-size: px2rpx(14);
+      color: #019AF6;
+      border: px2rpx(1) solid #019AF6;
+      border-radius: px2rpx(60);
+      background-color: #e5f5fe;
+    }
+
+    .useBtn {
+      width: px2rpx(197);
+      height: px2rpx(36);
+      font-size: px2rpx(14);
+      color: #fff;
+      border: none;
+      border-radius: px2rpx(60);
+      background-color: #019AF6;
+    }
+  }
 }

@@ -1,0 +1,72 @@
+@function px2rpx($px) {
+  @return $px*2+rpx;
+}
+
+.nav-obx {
+  padding: px2rpx(11) px2rpx(14);
+}
+
+//卡片
+.nav-order-box {
+  width: px2rpx(347);
+  height: px2rpx(163);
+  box-shadow: 0 0 px2rpx(8) px2rpx(-3) black;
+  padding: px2rpx(12);
+  box-sizing: border-box;
+
+  .or-odd {
+    font-size: px2rpx(14);
+    color: #101;
+
+    .o-copy {
+      font-size: px2rpx(12);
+      color: #40B850;
+      margin-left: px2rpx(10);
+      padding: 0 px2rpx(3);
+      background-color: #d9f1dd;
+      border-radius: px2rpx(4);
+    }
+  }
+
+  .or-site {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: px2rpx(92);
+
+    .o-juz {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: px2rpx(200);
+      font-size: px2rpx(18);
+      color: #101;
+      font-weight: 500;
+
+      .plane {
+        font-size: px2rpx(14);
+        color: #4C168E;
+
+        image {
+          width: px2rpx(32);
+          height: px2rpx(32);
+          margin-bottom: px2rpx(-10);
+        }
+      }
+    }
+
+  }
+
+  .or-btn {
+    float: right;
+
+    button {
+      width: px2rpx(80);
+      height: px2rpx(30);
+      border-radius: px2rpx(4);
+      font-size: px2rpx(12);
+      margin-left: px2rpx(15);
+    }
+
+  }
+}

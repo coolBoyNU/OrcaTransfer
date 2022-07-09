@@ -1,2 +1,22 @@
-<!--pages/info/info.wxml-->
-<text>pages/info/info.wxml</text>
+<van-tabs animated active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部">
+    <block wx:for="{{awaitList}}" wx:key="index">
+      <card list="{{item}}" bind:ctrl="oddctrl" bind:move="noves"></card>
+    </block>
+  </van-tab>
+  <van-tab title="待支付">
+    <block wx:for="{{awaitList}}" wx:key="index">
+      <card list="{{item}}" bind:ctrl="oddctrl" bind:move="noves"></card>
+    </block>
+  </van-tab>
+  <van-tab title="已支付">
+    <block wx:for="{{awaitList}}" wx:key="index">
+      <card list="{{item}}" bind:ctrl="oddctrl" bind:move="noves"></card>
+    </block>
+  </van-tab>
+  <van-tab title="已完成">
+    <block wx:for="{{awaitList}}" wx:key="index">
+      <card list="{{item}}" bind:ctrl="oddctrl" bind:move="noves"></card>
+    </block>
+  </van-tab>
+</van-tabs>

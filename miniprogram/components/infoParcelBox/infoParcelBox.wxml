@@ -1,0 +1,14 @@
+<view class="i-box">
+  <view class="i-left">
+    <image class="lf-img" src="../../static/estimation/imgthumb.png"></image>
+  </view>
+
+  <view class="i-right">
+    <view class="rig-tn">{{boxDat.title}}</view>
+    <view><text>属性：</text><text>普通货物</text></view>
+    <view><text>长宽高：</text><text>12*5*5 CM</text></view>
+    <view><text>计费重量：</text><text>1.25KG</text></view>
+    <view><text>计费方式：</text><text>实际重量</text></view>
+    <view><text>运费：</text><text>￥125</text></view>
+  </view>
+</view>

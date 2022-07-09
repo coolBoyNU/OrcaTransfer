@@ -5,18 +5,26 @@
 .footer-btn {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 101%;
   height: px2rpx(57);
   background-color: firebrick;
   text-align: center;
+  z-index: 10;
 
   .van-button {
+    float: left;
     width: px2rpx(188);
     height: px2rpx(57);
     font-size: px2rpx(18);
     color: white;
     border: none;
     border-radius: 0;
+  }
+
+  .fullBtn {
+    .van-button {
+      width: 100%;
+    }
   }
 
 }

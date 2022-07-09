@@ -1,4 +1,6 @@
+<van-notice-bar scrollable="{{ false }}" text="转运账单已生成，请及时查看账单信息并支付" />
 <view id="orderInfo">
+
   <view class="nav-information">
     <block wx:for="{{news}}" wx:key="index">
       <view class="wz-top">
@@ -20,7 +22,37 @@
     </block>
   </view>
 
+  <!-- 打包后包裹 -->
+  <block wx:if="{{inputValue.length>=1?true:false}}">
+    <view class="nav-parcel-box">
+      <view class="info-minbox">
+        <view><text>运费：</text><text>¥ 138.00</text></view>
+        <view><text>附加费：</text><text>¥ 0.00</text></view>
+        <view><text>称重重量：</text><text>5.6 kg</text></view>
+        <view><text>分拣备注：</text><text class="i-note">已拆封分拣，统一归类</text></view>
+        <view><text>打包备注：</text><text class="i-note">东西太多，已统一打包加固</text></view>
+        <view>
+          <text>称重图片：</text>
+          <view class="wim_img">
+            <image src="../../../static/estimation/imgthumb.png"></image>
+            <image src="../../../static/estimation/imgthumb.png"></image>
+            <image src="../../../static/estimation/imgthumb.png"></image>
+          </view>
+        </view>
 
+      </view>
+      <!-- 账单盒子内容 -->
+      <view class="in-detail">
+        <view class="i-title">账单：</view>
+
+        <!-- 分组件 样式要一起使用才有效 -->
+        <block wx:for="{{billParcel}}" wx:key="index">
+          <billBox boxDat="{{item}}"></billBox>
+        </block>
+      </view>
+
+    </view>
+  </block>
 
   <!-- 快递个数 -->
   <view class="nav-number">
@@ -30,7 +62,7 @@
     </view>
     <view class="num-enter">
       <label for="num">快递个数</label>
-      <input type="number" bindblur="bindKeyInput" value="{{inputValue.length?inputValue.length:''}}" id="num" disabled="{{isDisabled}}" focus="{{isFocus}}" placeholder="请输入（输入后弹出快递单号位置" />
+      <input type="number" bindblur="bindKeyInput" value="{{inputValue.length?inputValue.length:''}}" id="num" disabled="{{isDisabled}}" focus="{{isFocus}}" placeholder="请输入(输入后弹出快递单号位置)" />
     </view>
 
     <!-- 输入内容 -->
@@ -42,12 +74,24 @@
     <!-- 输入订单号 -->
     <view class="dd-input" wx:if="{{isInputShow}}">
       <block wx:for="{{inputValue}}" wx:key="index">
+
         <view class="inputBox">
-          {{index+1}}. <input type="text" value="{{item.value}}" bindblur="oddNum" data-mark="{{item.id}}" placeholder="请输入快递单号" />
-          <van-icon name="delete-o" bindtap="del" data-rem="{{item.id}}" />
+          <text class="input-sub">{{index+1}}.</text><input type="text" disabled="{{item.status}}" confirm-type="next" value="{{item.value}}" bindblur="oddNum" data-mark="{{item.id}}" placeholder="请输入快递单号" />
+
+          <block wx:if="{{item.bllSt==0}}">
+            <van-icon name="delete-o" bindtap="del" data-rem="{{item.id}}" />
+          </block>
+          <block wx:if="{{item.bllSt==1}}">
+            <text class="bll-wait">待入库</text>
+          </block>
+          <block wx:if="{{item.bllSt==2}}"> 
+            <text class="bll-wait bll-storage">已入库</text>
+          </block>
         </view>
       </block>
-      <van-button plain type="primary" bindtap="tickets">+ 补充快递单号</van-button>
+      <view class="repairone">
+        <van-button plain type="primary" bindtap="tickets">+ 补充快递单号</van-button>
+      </view>
     </view>
   </view>
 
@@ -64,15 +108,18 @@
 
     <!-- 右边 -->
     <view class="xx-right">
-      <view class="line_ellipsis_l1">298267132913123213 <text class="xx-copy" bindtap="xxCopy">复制</text></view>
-      <view>中国 — 美国</view>
-      <view class="line_ellipsis_l1">{{ditch}}</view>
-      <view>待填状态</view>
-      <view>2022-06-12 12:34:33</view>
+      <block wx:for="{{order}}" wx:key="index">
+        <view class="line_ellipsis_l1">{{item.numSize}}<text class="xx-copy" bindtap="xxCopy">复制</text></view>
+        <view>中国 — 美国</view>
+        <view class="line_ellipsis_l1">{{ditch}}</view>
+        <view style="color: #e7691d;">待填状态</view>
+        <view>2022-06-12 12:34:33</view>
+
+      </block>
     </view>
   </view>
 
 </view>
 <!-- 底部按钮 -->
 
-<footerbtn list="{{lists}}"></footerbtn>
+<footerbtn list="{{lists}}" bind:all="Service" bind:ver="callOff"></footerbtn>

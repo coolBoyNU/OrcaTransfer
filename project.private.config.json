@@ -37,7 +37,14 @@
         },
         {
           "name": "",
-          "pathName": "package/pages/fillAddress/fillAddress",
+          "pathName": "packs/pages/activity/activity",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "package/pages/orderInfo/orderInfo",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -51,28 +58,7 @@
         },
         {
           "name": "",
-          "pathName": "package/pages/myaddress/myaddress",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "package/pages/address/address",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "package/pages/myaddress/myaddress",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "package/pages/orderInfo/orderInfo",
+          "pathName": "pages/info/info",
           "query": "",
           "launchMode": "default",
           "scene": null

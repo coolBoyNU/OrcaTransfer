@@ -1,0 +1,29 @@
+<!--components/orderCard/orderCard.wxml-->
+<view class="orderCard" wx:if="{{orderNum}}">
+  <view class="orderNumber">订单号：{{orderNum.orderNumber}} <text class="copyOrder" bindtap="copyOrderNumber" data-orderNum="{{orderNum.orderNumber}}">复制</text>
+  </view>
+  <view class="orderCneter">
+    <text>中国</text>
+    <view class="orderFly">
+      <image src="../../static/address/icon-plian.png"></image>
+    </view>
+    <text>美国</text>
+  </view>
+  <view wx:if="{{orderNum.status==0}}" class="status">待入仓</view>
+  <view wx:if="{{orderNum.status==1}}" class="status">待填写</view>
+  <view wx:if="{{orderNum.status==2}}" class="status">待支付</view>
+  <view wx:if="{{orderNum.status==3}}" class="status">已出仓</view>
+  <view wx:if="{{orderNum.status==4}}" class="status">已完成</view>
+  <view class="btnBox">
+    <view class="statusBtn">
+      <van-button wx:if="{{orderNum.status==2}}">去支付</van-button>
+      <van-button wx:if="{{orderNum.status==0}}">确认打包</van-button>
+      <van-button wx:if="{{orderNum.status==3}}">物流详情</van-button>
+      <!-- <van-button>去支付</van-button>
+              <van-button>确认打包</van-button> -->
+    </view>
+    <view class="detail" type="default" bindtap="orderDetail" data-orderItem="{{orderNum}}">
+      <van-button>详情</van-button>
+    </view>
+  </view>
+</view>
